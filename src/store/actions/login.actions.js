@@ -29,11 +29,11 @@ export const log = (pe,px) => {
                         autenticado: 'autorizado'
                     })
 
-                    // await AsyncStorage.setItem('token', response.data.strCon)
-                    // await AsyncStorage.setItem('nombre', response.data.nombre)
+                     localStorage.setItem('token', response.data.strCon)
+                     localStorage.setItem('nombre', response.data.nombre)
                     
                 } else {
-                    // Alert.alert("Datos incorrectos","Intentalo otra vez", );
+                   alert("Datos incorrectos","Intentalo otra vez", );
                 
 
                 }
@@ -64,7 +64,8 @@ export const renuew =() => {
 
 
       try {
-        const strcon = 123
+        const strcon = localStorage.getItem('token')
+
         
         console.log('token',strcon)
         if(!strcon) return dispatch({
@@ -84,11 +85,8 @@ export const renuew =() => {
             payload:response.data,
             token:strcon
            })
-        //    dispatch({
-        //        type:RENOV,
-        //        payload:strcon
-        //    })
-             
+         
+
          }else{
              dispatch({
                  type:LOG_OUT

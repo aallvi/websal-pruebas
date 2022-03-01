@@ -3,7 +3,7 @@ import { Logo } from '../components/Logo'
 import { useDispatch } from 'react-redux';
 import '../styles/login.css'
 import { log } from '../store/actions/login.actions';
-
+import 'animate.css';
 export const Login = () => {
 
 
@@ -40,7 +40,7 @@ const sign =() => {
 
     
     <div className='container' >
-      <div className='containerLogin'>
+      <div className='containerLogin animate__animated animate__fadeIn'>
 
           <div className='contenedorLogo'>
                 <Logo/>
@@ -56,7 +56,7 @@ const sign =() => {
           <input type='text' value={px} onChange={e => setPx(e.target.value) } />
 
 
-           <button onClick={ () => console.log('hola')} > Ingresar </button>
+           <button onClick={ sign} > Ingresar </button>
 
 
           </div>
