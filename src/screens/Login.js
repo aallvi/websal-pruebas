@@ -49,14 +49,24 @@ const sign =() => {
 
           <div className='contenedorInput' >
 
-          <label> Código </label>
+          <label  > Código </label>
           <input type='text' value={pe} onChange={e => setPe(e.target.value) } />
 
           <label> Clave </label>
           <input type='text' value={px} onChange={e => setPx(e.target.value) } />
 
 
-           <button onClick={ sign} > Ingresar </button>
+           <button type='button' className='ingresar' onClick={ sign} > Ingresar </button>
+
+
+           <button onClick={ () => console.log('rec') } className='recuperarClave' >
+            <p> Recuperar Contraseña </p> 
+           </button>
+
+           <button onClick={ () => console.log('rec') } className='recuperarClave' >
+            <p> Ingresar por primera vez </p> 
+           </button>
+
 
 
           </div>
