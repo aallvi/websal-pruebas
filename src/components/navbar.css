@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.activeClassName{
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.BotonNav{
+   
+    text-decoration: none;
+
+    background-color: aquamarine;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.4s;
+}
+.BotonNav:hover {
+   
+    text-decoration: none;
+
+    background-color: rgba(127, 255, 212, 0.247);
+
+    padding: 10px;
+    border-radius: 10px;
+}
+
+li {
+    list-style: none;
+    padding: 30px;
+    display: inline;
+    font-size: 19px;
+   
+    
+}
+
+
+
+ul {
+    /* background-color: green; */
+    padding: 0;
+    margin: 0;
+    
+}
+
+nav {
+    
+
+    text-align: center;
+    background-color: white;
+    padding: 30px;
+    margin: 0;
+
+    
+   
+}
