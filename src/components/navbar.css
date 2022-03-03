@@ -4,8 +4,8 @@ body {
 }
 .activeClassName{
     text-decoration: none;
-    color: white;
-    background-color: black;
+    color: rgb(255, 255, 255);
+    background-color: rgb(82, 82, 82);
     padding: 10px;
     border-radius: 10px;
 }
@@ -13,18 +13,17 @@ body {
 .BotonNav{
    
     text-decoration: none;
-
-    background-color: aquamarine;
+    color: rgb(0, 0, 0);
+    /* background-color: aquamarine; */
     padding: 10px;
     border-radius: 10px;
-    transition: 0.4s;
+    transition: 0.5s;
 }
 .BotonNav:hover {
    
     text-decoration: none;
-
-    background-color: rgba(127, 255, 212, 0.247);
-
+    color: rgb(255, 255, 255);
+    background-color: rgb(82, 82, 82);
     padding: 10px;
     border-radius: 10px;
 }
@@ -51,7 +50,7 @@ nav {
     
 
     text-align: center;
-    background-color: white;
+    background-color:transparent;
     padding: 30px;
     margin: 0;
 

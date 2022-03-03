@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { BackButton } from '../components/BackButton'
+
 
 export const Vacaciones = () => {
 
@@ -11,7 +11,7 @@ export const Vacaciones = () => {
     <div>Vacaciones
 
 
-      <BackButton />
+      
 
 
 
