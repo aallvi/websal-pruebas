@@ -3,13 +3,17 @@ import { Route, Routes } from 'react-router-dom'
 import { Homescreen } from '../screens/Homescreen'
 
 export const NavigationLog = () => {
+
+
+
+
   return (
-    <>
+    
 
 
     <Routes>
 
-    <Route path="Homescreen" element={<Homescreen />} />
+    <Route path='/' element={<Homescreen />} />
 
     </Routes>
     
@@ -19,6 +23,6 @@ export const NavigationLog = () => {
     
     
     
-    </>
+   
   )
 }

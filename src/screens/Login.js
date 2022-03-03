@@ -4,9 +4,14 @@ import { useDispatch } from 'react-redux';
 import '../styles/login.css'
 import { log } from '../store/actions/login.actions';
 import 'animate.css';
+import { Link, useNavigate } from "react-router-dom";
+
+
+
+
 export const Login = () => {
 
-
+  let navigate = useNavigate();
 
   const [pe, setPe] = useState("335712")
   const [px, setPx] = useState("")
@@ -31,7 +36,7 @@ const sign =() => {
    console.log(pe)
 
    console.log(px)
-
+    
 
 
 
@@ -59,13 +64,15 @@ const sign =() => {
            <button type='button' className='ingresar' onClick={ sign} > Ingresar </button>
 
 
-           <button onClick={ () => console.log('rec') } className='recuperarClave' >
+           <button onClick={ () => navigate('RecuperarClave') } className='recuperarClave' >
             <p> Recuperar Contraseña </p> 
            </button>
 
-           <button onClick={ () => console.log('rec') } className='recuperarClave' >
+           <button onClick={ () => navigate('PrimeraVez') } className='recuperarClave' >
             <p> Ingresar por primera vez </p> 
            </button>
+
+         
 
 
 
