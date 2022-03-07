@@ -1,5 +1,16 @@
 .container{
-    padding-left: 10rem;
-    padding-right: 10rem;
+    /* padding-left: 1rem;
+    padding-right: 1rem; */
     
 }
+
+@media (min-width: 768px) { 
+ 
+    .container{
+        padding-left: 10rem;
+        padding-right: 10rem;
+        
+    }
+    
+ 
+} 

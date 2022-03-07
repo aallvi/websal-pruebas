@@ -4,7 +4,7 @@ body{
     background-size: cover;
 }
 
-.containerLogin {
+.containerPrimeraVez {
    width: 25%;
    margin: 3rem auto;
    display: flex;
@@ -19,7 +19,7 @@ body{
    
 }
 
-.contenedorInput{
+.contenedorInputPrimeraVez{
     display: flex;
     flex-direction: column;
     /* background-color: #2a5d75; */

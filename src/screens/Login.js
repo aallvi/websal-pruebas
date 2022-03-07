@@ -64,7 +64,7 @@ const sign =() => {
 
           
 
-          <label  > Código </label>
+          <label  > Código contrato </label>
           <input type='text' value={pe} onChange={e => setPe(e.target.value) } />
 
           <label> Clave </label>

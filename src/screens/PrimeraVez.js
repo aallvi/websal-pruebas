@@ -182,7 +182,7 @@ export const PrimeraVez = () => {
   return (
   
     <div className='container' >
-    <div className='containerLogin animate__animated animate__fadeIn'>
+    <div className='containerPrimeraVez animate__animated animate__fadeIn'>
 
       
           <div className='iniciar' >
@@ -193,7 +193,7 @@ export const PrimeraVez = () => {
           {
             datos.validacion.length > 1 ?
 
-            <div className='contenedorInput' >
+            <div className='contenedorInputPrimeraVez' >
 
                     
 
