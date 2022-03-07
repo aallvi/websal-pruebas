@@ -9,7 +9,7 @@ export const PrivateRoute = ({children}) => {
     const dispatch =  useDispatch()
 
     // useSelector(state => state.login.autenticado)
-  const autenticado = 'autenticado'
+  const autenticado = 'autenticadoo'
   
 
   console.log('autenticado?',autenticado);

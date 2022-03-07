@@ -50,9 +50,19 @@ const sign =() => {
           <div className='contenedorLogo'>
                 <Logo/>
 
+
+
             </div>
+            <div className='iniciar' >
+           <p>Inicia Sesión en WebSal</p>
+           </div> 
+           
+
+            
 
           <div className='contenedorInput' >
+
+          
 
           <label  > Código </label>
           <input type='text' value={pe} onChange={e => setPe(e.target.value) } />
@@ -61,14 +71,16 @@ const sign =() => {
           <input type='text' value={px} onChange={e => setPx(e.target.value) } />
 
 
-           <button type='button' className='ingresar' onClick={ sign} > Ingresar </button>
+           <button type='button' className='ingresar' onClick={ sign} >
+             <p>Ingresar</p> 
+               </button>
 
 
-           <button onClick={ () => navigate('RecuperarClave') } className='recuperarClave' >
+           <button onClick={ () => navigate('/RecuperarClave') } className='recuperarClave' >
             <p> Recuperar Contraseña </p> 
            </button>
 
-           <button onClick={ () => navigate('PrimeraVez') } className='recuperarClave' >
+           <button onClick={ () => navigate('/PrimeraVez') } className='recuperarClave' >
             <p> Ingresar por primera vez </p> 
            </button>
 

@@ -2,13 +2,20 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { renuew } from '../store/actions/login.actions';
+import '../styles/primeravez.css'
+import DatePicker from "react-datepicker";
 
-export const PrimeraVez = (props) => {
+import "react-datepicker/dist/react-datepicker.css";
+import { registerLocale, setDefaultLocale } from  "react-datepicker";
+import es from 'date-fns/locale/es';
+import { Loading } from '../components/Loading';
+registerLocale('es', es)
+
+export const PrimeraVez = () => {
 
   
-  // const {texto}  = route
 
-  console.log('veamos',props)
+
     
   const dispatch =  useDispatch()
     
@@ -21,20 +28,23 @@ export const PrimeraVez = (props) => {
    const [empresaId, setEmpresaId] = useState('');
    const [date, setDate] = useState(new Date('1992-01-02'))
  
-
+   
  
  
-   const dia = Number(date.toString().split(' ')[2])
-   const mesText = date.toString().split(' ')[1]
+   const dia = date!= null ? Number(date.toString().split(' ')[2] ) : 'd'
+   const mesText = date!= null ? date.toString().split(' ')[1] : 'm'
  
    let mes =
     mesText === 'Jan' ? 1 : mesText  === 'Feb' ? 2 : mesText  === 'Mar' ? 3 : mesText  === 'Apr' ? 4 : mesText  === 'May' ? 5 :
     mesText  === 'Jun' ? 6 : mesText  === 'Jul' ? 7 : mesText  === 'Aug' ? 8 : mesText  === 'Sep' ? 9 : mesText  === 'Oct' ? 10 :
     mesText  === 'Nov' ? 11 : 12
  
-   const ano = Number(date.toString().split(' ')[3])
+   const ano = date!= null ? Number(date.toString().split(' ')[3]) : 'a'
  
    console.log('mes',mes)
+
+   console.log('dia',dia)
+   console.log('ano',ano)
  
    //  Variables segunda Etapa
  
@@ -44,8 +54,8 @@ export const PrimeraVez = (props) => {
  
    const [strcon, setStrcon] = useState('')
  
-   console.log('pe',pe)
-   console.log('empresaId',empresaId)
+  //  console.log('pe',pe)
+  //  console.log('empresaId',empresaId)
  
    
    
@@ -166,10 +176,97 @@ export const PrimeraVez = (props) => {
  
          }
  
-
+         console.log('date',date)
 
 
   return (
-    <div> hola </div>
+  
+    <div className='container' >
+    <div className='containerLogin animate__animated animate__fadeIn'>
+
+      
+          <div className='iniciar' >
+         <p>Primera vez</p>
+         </div> 
+         
+
+          {
+            datos.validacion.length > 1 ?
+
+            <div className='contenedorInput' >
+
+                    
+
+              <label  > Nueva Contraseña</label>
+              <input type='text' value={px} onChange={e => setClave(e.target.value) } />
+
+              <label  > Repita Nueva Contraseña</label>
+              <input type='text' value={pxAgain} onChange={e => setClaveAgain(e.target.value) } />
+
+
+
+
+
+
+              <button className='continuar' onClick={ () => console.log('continuar') }  >
+                <p> Continuar </p> 
+              </button>
+
+
+
+
+
+              </div> 
+
+              : datos.validacion === 2 ?
+
+              <div className='contenedorInput' >
+
+                  
+
+                      <label  > Código </label>
+                      <input type='text' value={pe} onChange={e => setPe(e.target.value) } />
+
+                      <label  > Fecha de Nacimiento </label>
+
+                      <DatePicker  locale="es" selected={date} onChange={(date) => setDate(date)}/>
+                      {/* COLOCAR DATEPICKER MAS COMPLETO DE https://reactdatepicker.com/ */}
+
+                      <label> RUT Empresa </label>
+                      <input type='text' value={empresaId} onChange={e => setEmpresaId(e.target.value) } />
+
+
+                      
+
+                    
+
+                      <button className='continuar' onClick={ () => console.log('continuar') }  >
+                        <p> Continuar </p> 
+                      </button>
+
+
+
+                </div> 
+
+               : <Loading />
+ 
+
+
+
+          }
+
+        
+
+      
+
+
+
+
+    </div>
+    
+
+
+  </div>
+
   )
 }
