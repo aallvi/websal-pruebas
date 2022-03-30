@@ -77,11 +77,11 @@ const sign =() => {
 
 
            <button onClick={ () => navigate('/RecuperarClave') } className='recuperarClave' >
-            <p> Recuperar Contraseña </p> 
+            <p className='textoRecuperarClave' > Recuperar Contraseña </p> 
            </button>
 
            <button onClick={ () => navigate('/PrimeraVez') } className='recuperarClave' >
-            <p> Ingresar por primera vez </p> 
+            <p className='textoPrimeraVez' > Ingresar por primera vez </p> 
            </button>
 
          

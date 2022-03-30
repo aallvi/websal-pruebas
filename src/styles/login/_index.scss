@@ -4,7 +4,7 @@
 .containerLogin {
    
 
-    width: 25rem;
+    width: 22rem;
     margin: 3rem auto;
     display: flex;
     align-items: center;
@@ -61,8 +61,8 @@
 
 .ingresar {
     margin-top: 2rem;
-    margin-bottom: 2rem;
-    background-color: #2ec1db; /* Green */
+    margin-bottom: 1rem;
+    background-color: v.$primario; /* Green */
   border: none;
   color: rgb(252, 249, 249);
   padding: 1rem 1rem;
@@ -94,7 +94,74 @@
 }
 
 label {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-family: v.$fuentePrincipal
 }
 
+
+.contenedorLogo {
+
+    &:nth-child(1){
+        margin-top: -3rem;
+        margin-left: -14rem;
+
+    }
+    
+}
+
+.recuperarClave{
+
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    border: none;
+    /* margin-bottom: 2rem; */
+
+    .textoRecuperarClave{
+
+        font-size: 1.3rem;
+        cursor: pointer;
+        padding: 0;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+        font-family: v.$fuentePrincipal;
+          
+      
+      }
+
+      .textoPrimeraVez{
+        font-size: 1.3rem;
+        cursor: pointer;
+        padding: 0;
+        margin-bottom: 2rem;
+        margin-top: 1rem;
+        font-family: v.$fuentePrincipal;
+
+      }
+
+      
+    
+
+}
+
+.iniciar{
+    margin-top: -6rem;
+    padding: 0;
+
+
+    p{
+        margin-left: -5rem;
+        font-size: 1.5rem;
+        font-family: v.$fuentePrincipal;
+     }
+
+
+     span {
+        color: v.$primario
+    }
+    
+
+
+
+}
+  
