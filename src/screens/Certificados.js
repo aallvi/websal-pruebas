@@ -67,7 +67,7 @@ export const Certificados = () => {
               <p>Antiguedad</p>
 
               <label class="switch">
-              <input type="checkbox" checked={antiguedad} onClick={() => setAntiguedad(!antiguedad) } />
+              <input type="checkbox" checked={antiguedad} onChange={() => setAntiguedad(!antiguedad) } />
               <span class="slider round"></span>
               </label>
 
@@ -76,7 +76,7 @@ export const Certificados = () => {
               <p>Tipo Contrato</p>
 
               <label class="switch">
-              <input type="checkbox" checked={tipoContrato} onClick={() => setTipoContrato(!tipoContrato) } />
+              <input type="checkbox" checked={tipoContrato} onChange={() => setTipoContrato(!tipoContrato) } />
               <span class="slider round"></span>
               </label>
 
@@ -85,7 +85,7 @@ export const Certificados = () => {
               <p>Cargo</p>
 
               <label class="switch">
-              <input type="checkbox" checked={cargo} onClick={() => setCargo(!cargo) } />
+              <input type="checkbox" checked={cargo} onChange={() => setCargo(!cargo) } />
               <span class="slider round"></span>
               </label>
 
@@ -94,7 +94,7 @@ export const Certificados = () => {
               <p>Renta</p>
 
               <label class="switch">
-              <input type="checkbox" checked={renta} onClick={() => setRenta(!renta) } />
+              <input type="checkbox" checked={renta} onChange={() => setRenta(!renta) } />
               <span class="slider round"></span>
               </label>
 

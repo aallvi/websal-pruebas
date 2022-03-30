@@ -1,0 +1,100 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+.containerLogin {
+   
+
+    width: 25rem;
+    margin: 3rem auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0px 3px 25px 5px rgba(0,0,0,0.54);
+    padding: 0;
+
+
+    @include m.tablet {
+
+        width: 30rem;
+        margin: 3rem auto;
+        /* margin-bottom: 500px; */
+         
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background-color: white;
+     
+        /* border: 0.3rem solid #439cd8; */
+        border-radius: 1rem;
+        box-shadow: 0px 3px 25px 5px rgba(0,0,0,0.54);
+        padding: 0;
+            
+         
+        
+    }
+    
+ }
+
+
+ .contenedorInput{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* background-color: #2a5d75; */
+    /* width: 10rem; */
+    margin-top: -2rem;
+    
+    input {
+ 
+        
+        border: 0.1rem solid rgb(180, 180, 233);
+        border-radius: 0.4rem;
+        height: 1.6rem;
+        font-size: 1.2rem;
+    
+    }
+    
+}
+
+
+.ingresar {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background-color: #2ec1db; /* Green */
+  border: none;
+  color: rgb(252, 249, 249);
+  padding: 1rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.5s;
+  border-radius: 3rem;
+
+
+        p{
+            margin: 0;
+            padding: 0;
+            color: rgb(252, 249, 249);
+            font-family: v.$fuentePrincipal;
+            font-size: 1.3rem;
+            
+        }
+
+
+        &:hover {
+            background-color: #2a5d75; /* Green */
+            
+        }
+
+
+}
+
+label {
+    font-size: 1.3rem;
+    font-family: v.$fuentePrincipal
+}
+

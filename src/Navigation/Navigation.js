@@ -9,7 +9,7 @@ import { RecuperarClave } from '../screens/RecuperarClave'
 import { renuew } from '../store/actions/login.actions'
 import { NavigationLog } from './NavigationLog'
 import { PrivateRoute } from './PrivateRoute'
-import '../styles/normalize.css'
+
 
 export const Navigation = () => {
 

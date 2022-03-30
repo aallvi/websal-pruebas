@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Logo } from '../components/Logo'
 import { useDispatch } from 'react-redux';
-import '../styles/login.css'
+
 import { log } from '../store/actions/login.actions';
 import 'animate.css';
 import { Link, useNavigate } from "react-router-dom";
@@ -54,7 +54,7 @@ const sign =() => {
 
             </div>
             <div className='iniciar' >
-           <p>Inicia Sesión en WebSal</p>
+           <p>Inicia Sesión en <span>WebSal</span></p>
            </div> 
            
 
@@ -64,7 +64,7 @@ const sign =() => {
 
           
 
-          <label  > Código contrato </label>
+          <label > Código contrato </label>
           <input type='text' value={pe} onChange={e => setPe(e.target.value) } />
 
           <label> Clave </label>

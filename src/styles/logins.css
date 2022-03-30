@@ -1,17 +1,66 @@
 body{
-    background-image: url(https://static.vecteezy.com/system/resources/previews/002/848/469/non_2x/modern-white-background-textured-with-abstract-hexagon-pattern-vector.jpg);
-
+  
     height:100%;
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    background-color: #999;
+    background-color: rgb(165, 159, 159);
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: var(--fuentePrincipal);
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+/* GLOBALES */
+
+.contenedor{
+    max-width: 120rem;
+    width: 90%;
+    margin: 0 auto;
+}
+
+h1,h2,h3 {
+    font-weight: 900;
+    font-family: var(--fuenteSecundaria);
+    margin: calc(var(--separacion)/2) 0 ;
+}
+
+h1 {
+    font-size: 4.4rem;
+}
+
+h2 {
+    font-size: 3.6rem;
+}
+h3{
+    font-size: 2.8rem;
+}
+
+/* IMAGENES RESPONSIVE */
+
+
+img {
+    max-width: 100%;
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 .containerLogin {
-   width: 20rem;
-   margin: 3rem auto;
+   width: 30rem;
+   margin: 8rem auto;
    /* margin-bottom: 500px; */
     
    display: flex;
@@ -29,7 +78,7 @@ body{
 @media (min-width: 768px) { 
  
     .containerLogin {
-        width: 25rem;
+        width: 38rem;
         margin: 3rem auto;
         display: flex;
         align-items: center;
@@ -48,19 +97,21 @@ body{
 .contenedorInput{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     /* background-color: #2a5d75; */
     /* width: 10rem; */
     margin-top: -2rem;
     
 }
 
-input {
+.contenedorInput input {
     margin-top: 1rem;
     margin-bottom: 1rem;
     
     border: 0.1rem solid rgb(180, 180, 233);
     border-radius: 0.4rem;
-    height: 1.2rem;
+    height: 2.9rem;
+    font-size: 1.8rem;
 
 }
 
@@ -68,7 +119,7 @@ input {
 .ingresar {
     margin-top: 2rem;
     margin-bottom: 2rem;
-    background-color: #4c8baf; /* Green */
+    background-color: #2ec1db; /* Green */
   border: none;
   color: rgb(252, 249, 249);
   font-size: 30px;
@@ -76,7 +127,7 @@ input {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 2rem;
   cursor: pointer;
   transition: 0.5s;
   border-radius: 3rem;
@@ -86,7 +137,7 @@ input {
   padding: 0;
   color: rgb(252, 249, 249);
  
-  font-size: 16px;
+  font-size: 2rem;
   
 }
 
@@ -96,14 +147,19 @@ input {
 }
 
 label {
-    font-size: 1.2rem;
+    font-size: 2rem;
     font-family: Arial, Helvetica, sans-serif
 }
 
-.contenedorLogo{
-   margin-top: -1.5rem;
-   /* background-color: red; */
+.contenedorLogo :nth-child(1){
+  margin-top: -5rem;
+  margin-left: -6rem;
+  
+  
 }
+
+
+
 
 
 .recuperarClave{
@@ -116,12 +172,22 @@ label {
     
 
 }
+
+.contenedorInput label{
+    font-size: 1.7rem;
+   
+}
+
+
+
+
+
 .recuperarClave p{
 
-  font-size: 1rem;
+  font-size: 1.7rem;
   cursor: pointer;
   padding: 0;
-  margin: 0 0 1.5rem 0;
+  margin: 1rem 0 2.5rem 0;
     
 
 }
@@ -129,8 +195,16 @@ label {
 p{ font-family: Arial, Helvetica, sans-serif;}
 
 .iniciar{
-    margin-bottom: 3rem;
+    margin-top: -11rem;
     padding: 0;
+}
+.iniciar p{
+   margin-left: -5rem;
+   font-size: 1.8rem;
+}
+
+.iniciar span {
+    color: #2ec1db;
 }
 
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import WebSal from '../assets/WebSal.png'
+import WebSal from '../assets/websalNegro.png'
 
 export const Logo = () => {
   return (

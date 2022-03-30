@@ -8,7 +8,7 @@ import { Contrato } from '../screens/Contrato'
 import { Datos } from '../screens/Datos'
 import { Vacaciones } from '../screens/Vacaciones'
 import { NavBar } from '../components/NavBar'
-import './NavigationLog.css'
+
 
 export const NavigationLog = () => {
 
