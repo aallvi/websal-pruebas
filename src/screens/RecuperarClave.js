@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { Loading } from '../components/Loading';
 import { renuew } from '../store/actions/login.actions';
-import '../styles/primeravez.css'
+
 
 
 export const RecuperarClave = () => {
@@ -217,22 +217,23 @@ export const RecuperarClave = () => {
 
 
   return (
-    <div className='container' >
+   
     <div className='containerLogin animate__animated animate__fadeIn'>
-
       
-          <div className='iniciar' >
-         <p>Recuperar Contraseña</p>
-         </div> 
-         
+      <div className='tituloRecuperar' >
+      <p>Recupera tu Contraseña
+      </p>
+
+      </div>
+          
          { datos.validacion === '1' ?
 
               <div className='contenedorInput' >
 
-              <p>Se ha enviado un codigo a tu email</p>
+              <p className='textoCodigoaMail' >Se ha enviado un código a tu email</p>
 
               <label  > Codigo recibido </label>
-              <input type='text' value={codigo} onChange={e => setCodigo(e.target.value) } />
+              <input className='inputCodigoRecibido' type='text' value={codigo} onChange={e => setCodigo(e.target.value) } />
 
 
 
@@ -282,7 +283,7 @@ export const RecuperarClave = () => {
               <label  > Nueva Contraseña</label>
               <input type='text' value={px} onChange={e => setClave(e.target.value) } />
 
-              <label  > Repita Nueva Contraseña</label>
+              <label className='textoRepitaClave' > Repita Nueva Contraseña</label>
               <input type='text' value={pxAgain} onChange={e => setClaveAgain(e.target.value) } />
 
 
@@ -322,6 +323,6 @@ export const RecuperarClave = () => {
     
 
 
-  </div>
+  
   )
 }

@@ -1,7 +1,8 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
-import '../styles/certificados.css'
+import { Loading } from '../components/Loading';
+
 
 
 export const Certificados = () => {
@@ -60,7 +61,11 @@ export const Certificados = () => {
 
 
   return (
-    <div className='contenedor' >
+   <>
+
+        <div className='titulo' >
+         <p>Genera tu certificado con los elementos que necesitas</p>
+         </div> 
 
       <div className='contenedorAllToggles' >
           <div className='contenedorToggles' >
@@ -105,13 +110,31 @@ export const Certificados = () => {
 
      
       <button className='buttonCertificado' onClick={guardarCertificados} >
-            <p>Generar Certificado</p>
+            <p>Generar</p>
       </button>
 
+    {
 
+      datos==='cargando' ? 
+
+      <Loading />
+
+      : datos?  
+
+
+      <div className='contenedorCertificadoListo' >
+        <p>Certificado Listo</p> 
+
+        <a href='https://google.com' target='_blank' className='verPdf' >Ver PDF</a>
+      </div>
+
+      : null
+
+
+    }
     
 
 
-    </div>
+      </>
   )
 }

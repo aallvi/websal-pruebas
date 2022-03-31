@@ -1,10 +1,14 @@
 @use '../base/mixins' as m;
 @use '../base/variables' as v;
+@forward  'recuperar';
+@forward  'primera';
+
+
 
 .containerLogin {
    
 
-    width: 22rem;
+    width: 33rem;
     margin: 3rem auto;
     display: flex;
     align-items: center;
@@ -17,7 +21,7 @@
 
     @include m.tablet {
 
-        width: 30rem;
+        width: 45rem;
         margin: 3rem auto;
         /* margin-bottom: 500px; */
          
@@ -49,12 +53,16 @@
     input {
  
         
-        border: 0.1rem solid rgb(180, 180, 233);
+        border: 0.1rem solid v.$primario;
         border-radius: 0.4rem;
-        height: 1.6rem;
-        font-size: 1.2rem;
+        height: 2.6rem;
+        font-size: 1.8rem;
+
+
+      
     
     }
+
     
 }
 
@@ -80,7 +88,7 @@
             padding: 0;
             color: rgb(252, 249, 249);
             font-family: v.$fuentePrincipal;
-            font-size: 1.3rem;
+            font-size: 2rem;
             
         }
 
@@ -93,10 +101,6 @@
 
 }
 
-label {
-    font-size: 1.2rem;
-    font-family: v.$fuentePrincipal
-}
 
 
 .contenedorLogo {
@@ -119,22 +123,22 @@ label {
 
     .textoRecuperarClave{
 
-        font-size: 1.3rem;
+        font-size: 2rem;
         cursor: pointer;
         padding: 0;
-        margin-bottom: 1rem;
-        margin-top: 1rem;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
         font-family: v.$fuentePrincipal;
           
       
       }
 
       .textoPrimeraVez{
-        font-size: 1.3rem;
+        font-size: 2rem;
         cursor: pointer;
         padding: 0;
-        margin-bottom: 2rem;
-        margin-top: 1rem;
+        margin-bottom: 3rem;
+        margin-top: 2rem;
         font-family: v.$fuentePrincipal;
 
       }
@@ -145,13 +149,14 @@ label {
 }
 
 .iniciar{
-    margin-top: -6rem;
+    margin-top: -8rem;
     padding: 0;
+    margin-bottom: 2rem;
 
 
     p{
         margin-left: -5rem;
-        font-size: 1.5rem;
+        font-size: 2.2rem;
         font-family: v.$fuentePrincipal;
      }
 
@@ -165,3 +170,25 @@ label {
 
 }
   
+
+label {
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-family: v.$fuentePrincipal;
+
+}
+
+.continuar{
+
+    width: 20rem;
+    margin: 0 auto;
+    margin-top: v.$separacion;
+    margin-bottom: v.$separacion;
+
+    p{
+        font-size: 2rem;
+    }
+}
+
+

@@ -2,9 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { renuew } from '../store/actions/login.actions';
-import '../styles/primeravez.css'
 import DatePicker from "react-datepicker";
-
 import "react-datepicker/dist/react-datepicker.css";
 import { registerLocale, setDefaultLocale } from  "react-datepicker";
 import es from 'date-fns/locale/es';
@@ -182,10 +180,10 @@ export const PrimeraVez = () => {
   return (
   
     <div className='container' >
-    <div className='containerPrimeraVez animate__animated animate__fadeIn'>
+    <div className='containerLogin animate__animated animate__fadeIn'>
 
       
-          <div className='iniciar' >
+          <div className='tituloRecuperar' >
          <p>Primera vez</p>
          </div> 
          
@@ -193,7 +191,7 @@ export const PrimeraVez = () => {
           {
             datos.validacion.length > 1 ?
 
-            <div className='contenedorInputPrimeraVez' >
+            <div className='contenedorInput' >
 
                     
 
@@ -224,7 +222,7 @@ export const PrimeraVez = () => {
 
                   
 
-                      <label  > Código </label>
+                      <label  > Código de contrato</label>
                       <input type='text' value={pe} onChange={e => setPe(e.target.value) } />
 
                       <label  > Fecha de Nacimiento </label>

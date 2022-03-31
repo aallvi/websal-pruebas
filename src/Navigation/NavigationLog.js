@@ -21,7 +21,7 @@ export const NavigationLog = () => {
     
     <NavBar/>
     
-    <div className='container' >
+    <div className='contenedor' >
     <Routes>
 
      
