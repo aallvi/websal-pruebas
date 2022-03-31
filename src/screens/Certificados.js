@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
 import { Loading } from '../components/Loading';
-
+import Swal from 'sweetalert2'
 
 
 export const Certificados = () => {
@@ -50,7 +50,12 @@ export const Certificados = () => {
 
   const guardarCertificados = () => {
 
-    if(certificados === '') return alert("Selecciona Certificado","Debes seleccionar al menos 1", );
+    if(certificados === '') return Swal.fire({
+      title: 'Selecciona un elemento',
+      text: 'Debes seleccionar al menos 1',
+      confirmButtonColor:'#2ec1db',
+      
+    })
 
        console.log('generando...')
 
