@@ -1,0 +1,29 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+
+.whiteLabel {
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+    .texto{
+        width: 50%;
+        // background-color: yellow;
+        margin-left: 3rem;
+        font-size: 1.6rem;
+        font-weight: bold;
+
+
+    }
+
+
+    .textoDos{
+        width: 50%;
+        // background-color: blue;
+        margin-left: 3rem;
+        font-size: 1.6rem;
+
+
+
+    }
+}

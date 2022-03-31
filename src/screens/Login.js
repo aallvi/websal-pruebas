@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { log } from '../store/actions/login.actions';
 import 'animate.css';
 import { Link, useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 
 
@@ -22,7 +23,12 @@ export const Login = () => {
 const sign =() => {
 
   if(pe === '' || px === '' ){
-      alert("Completa todos los campos","Intentalo otra vez", );
+    Swal.fire({
+      title: 'Completa todos los campos',
+      text: 'Intentalo otra vez',
+      confirmButtonColor:'#2ec1db',
+      
+    })
       return
   }
 

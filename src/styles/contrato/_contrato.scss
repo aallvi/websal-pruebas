@@ -1,0 +1,52 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+
+
+.contenedorContrato{
+ margin: 0 auto;
+ margin-top: 3rem;
+ width: 40rem;
+
+//  background-color: red;
+//  height: 80rem;
+ box-shadow: -2px 3px 19px -4px rgba(0,0,0,0.27);
+ border-radius: 2rem;
+ margin-bottom: 3rem;
+
+ @include m.tablet {
+    margin: 0 auto;
+    margin-top: 3rem;
+    width: 60rem;
+   
+   //  background-color: red;
+   //  height: 80rem;
+    box-shadow: -2px 3px 19px -4px rgba(0,0,0,0.27);
+    border-radius: 2rem;
+    margin-bottom: 3rem;
+
+     
+ }
+
+
+}
+
+
+.headerContrato {
+
+    // background-color: green;
+    margin: 0;
+    padding: 0;
+
+
+    p{
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+        margin-left: 3rem;
+        font-size: 2rem;
+    }
+
+
+
+}
+

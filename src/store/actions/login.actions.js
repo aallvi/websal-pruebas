@@ -1,4 +1,5 @@
 import axios from 'axios'
+import Swal from 'sweetalert2'
 
 
 export const SIGN_IN = 'SIGN_IN'
@@ -33,7 +34,12 @@ export const log = (pe,px) => {
                      localStorage.setItem('nombre', response.data.nombre)
                     
                 } else {
-                   alert("Datos incorrectos","Intentalo otra vez", );
+                  Swal.fire({
+                    title: 'Datos incorrectos',
+                    text: 'intentalo otra vez',
+                    confirmButtonColor:'#2ec1db',
+                    
+                  })
                 
 
                 }
