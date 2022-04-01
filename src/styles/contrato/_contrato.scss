@@ -58,10 +58,20 @@
     
 
     svg{
+
         position: absolute;
         overflow: hidden;
+        height:15.5rem;  
+          width: 40rem;
+
+        @include m.tablet {
+            position: absolute;
+            overflow: hidden;
+        height:13.5rem;  
           
-          width: 60rem;
+           width: 60rem;
+        }
+        
         
     }
 

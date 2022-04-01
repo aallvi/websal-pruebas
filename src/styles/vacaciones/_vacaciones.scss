@@ -1,0 +1,77 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+.contenedorDatosPrincipalesVacas{
+    margin-top: 3rem;
+}
+
+
+.recuadros {
+    display: flex;
+    flex-direction: row;
+    height: 4.5rem;
+    align-items: center;
+    margin-bottom: 3rem;
+    // background-color: red;
+    background-color: white;
+    width: 36rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    box-shadow: -2px 3px 19px -4px rgba(0,0,0,0.27);
+
+    @include m.tablet {
+        display: flex;
+        flex-direction: row;
+        height: 4rem;
+        align-items: center;
+        margin-bottom: 3rem;
+        // background-color: red;
+        background-color: white;
+        width: 50rem;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        box-shadow: -2px 3px 19px -4px rgba(0,0,0,0.27);
+    
+        
+    }
+  
+
+
+
+
+   
+
+}
+
+
+.contenedorLeftdata {
+    display: flex;
+    padding-left: 0.8rem;
+    margin: 0;
+    background-color: v.$primario;
+    width: 40%;
+    height: 100%;
+    align-items: center;
+    border-bottom-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+    
+    p{
+        margin: 0;
+        padding: 0;
+        color: white;
+        text-align: left;
+        
+    }
+}
+
+
+.textoRightData{
+
+    width: 60%;
+
+    p{
+        text-align: center;
+    }
+}
