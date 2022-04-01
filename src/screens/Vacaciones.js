@@ -38,7 +38,7 @@ export const Vacaciones = () => {
 
 
   return (
-    < >
+    <div className='VacationContainer' >
 
        <div className='titulo' >
        <p >Informacion sobre tus Vacaciones</p>
@@ -154,6 +154,6 @@ export const Vacaciones = () => {
 
 
 
-    </>
+    </div>
   )
 }

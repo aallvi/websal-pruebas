@@ -1,12 +1,18 @@
 @use '../base/mixins' as m;
 @use '../base/variables' as v;
 
-p{
-    margin: 0;
-    text-align: center;
- font-size: 2rem;
 
- }
+
+.VacationContainer{
+
+    p{
+        margin: 0;
+        text-align: center;
+     font-size: 2rem;
+    
+     }
+
+}
 
 .contenedorDatosPrincipalesVacas{
     // background-color: red;
