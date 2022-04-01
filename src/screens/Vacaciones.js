@@ -4,34 +4,37 @@ import FlatList from 'flatlist-react';
 
 export const Vacaciones = () => {
 
-   const vacas = [{
+   const vacas = [
+    {
+      desde:'04/01/2022',
+      hasta:'05/03/2023',
+      normales:'30',
+      progresivas:'20'
+    },{
      desde:'04/01/2022',
      hasta:'05/03/2023',
      normales:'30',
      progresivas:'20'
    },{
-    desde:'04/01/2022',
-    hasta:'05/03/2023',
-    normales:'30',
-    progresivas:'20'
-  },{
-    desde:'04/01/2022',
-    hasta:'05/03/2023',
-    normales:'30',
-    progresivas:'20'
-  },{
-    desde:'04/01/2022',
-    hasta:'05/03/2023',
-    normales:'30',
-    progresivas:'20'
-  },
-  {
-    desde:'04/01/2022',
-    hasta:'05/03/2023',
-    normales:'30',
-    progresivas:'20'
-  },
+     desde:'04/01/2022',
+     hasta:'05/03/2023',
+     normales:'30',
+     progresivas:'20'
+   },{
+     desde:'04/01/2022',
+     hasta:'05/03/2023',
+     normales:'30',
+     progresivas:'20'
+   },
+   {
+     desde:'04/01/2022',
+     hasta:'05/03/2023',
+     normales:'30',
+     progresivas:'20'
+   },
   ]
+
+
 
 
   return (
@@ -84,6 +87,11 @@ export const Vacaciones = () => {
 
             </div>
 
+           <div className='vacacionesTomadas' >
+               <p  >Vacaciones Tomadas: <span>{vacas.length} </span> </p>
+
+           </div>
+
             {/* Tabla */}
 
             <div> 
@@ -98,28 +106,36 @@ export const Vacaciones = () => {
 
 
                   </div>
+                  
 
                   <div className='contenidoTablaVacaciones' >
 
                       <FlatList list={vacas} renderItem={item => 
-                      <div className='divflat' >
-                          <p>{item.desde}</p>
-                          <p>{item.hasta}</p>
-                          <p>{item.normales}</p>
-                          <p>{item.progresivas}</p>
+                              <div className='divflat' >
+                                  <p>{item.desde}</p>
+                                  <p>{item.hasta}</p>
+                                  <p>{item.normales}</p>
+                                  <p>{item.progresivas}</p>
 
 
-                      </div>
+                              </div>
                       
                       
                       
                       
-                      
-                      }
-                      
-                      renderWhenEmpty={() => <p>No haz tomado vacaciones</p>}
-                      
-                      />
+                            
+                            }
+                            
+                            renderWhenEmpty={() =>
+                              <div className='renderEmpty' >
+
+                                <p>No haz tomado Vacaciones</p>
+
+                              </div>
+                            }
+                            hasMoreItems
+                            renderOnScroll
+                            />
 
 
 

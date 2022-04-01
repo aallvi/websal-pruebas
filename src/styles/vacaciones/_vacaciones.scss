@@ -102,10 +102,12 @@
     // box-shadow: -2px 0px 19px -4px rgba(90, 90, 90, 0.27);
     border: 0.1px solid rgb(223, 219, 219);
 
-    // height: 35rem;
+    height: 33rem;
     margin-bottom: 5rem;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
+    overflow: scroll;
+
      
 
 
@@ -114,17 +116,56 @@
           flex-direction: row;
           margin-top: 1.5rem;
           margin-bottom: 1.5rem;
+          height: 3.8rem;
+         border-bottom: 0.1px solid rgb(223, 219, 219);
 
+             &:nth-last-child(2) {
+            border-bottom: unset;
+            }
+        
 
           p {
               width: 25%;
+
+
+              &:nth-child(3) {
+ 
+               padding-left: 1.5rem;
+            }
+              &:nth-child(4) {
+ 
+               padding-left: 3rem;
+            }
+  
           }
 
+      
             
       }
 }
 
 
+.renderEmpty {
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 // .divflat{
 //     height: 35rem;
 // }
+
+.vacacionesTomadas{
+    // background-color: red;
+    margin-bottom: 2rem;
+
+    p {
+        text-align: left;
+        margin-left: 3.3rem;
+
+        span{
+            // font-weight: bold;
+        }
+    }
+}
