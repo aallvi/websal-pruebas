@@ -38,8 +38,12 @@ export const Vacaciones = () => {
 
 
   return (
-    <div className='titulo' >
-      <p>Informacion sobre tus Vacaciones</p>
+    < >
+
+       <div className='titulo' >
+       <p >Informacion sobre tus Vacaciones</p>
+
+       </div>
 
             <div className='contenedorDatosPrincipalesVacas' >
 
@@ -94,7 +98,7 @@ export const Vacaciones = () => {
 
             {/* Tabla */}
 
-            <div> 
+            <div className='contenidoTodoTabla' > 
                   {/* header tabla */}
                   <div className='headerTablaVacaciones' >
 
@@ -150,6 +154,6 @@ export const Vacaciones = () => {
 
 
 
-    </div>
+    </>
   )
 }

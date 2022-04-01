@@ -1,8 +1,24 @@
 @use '../base/mixins' as m;
 @use '../base/variables' as v;
 
+p{
+    margin: 0;
+    text-align: center;
+ font-size: 2rem;
+
+ }
+
 .contenedorDatosPrincipalesVacas{
+    // background-color: red;
+    margin: 0 auto;
     margin-top: 3rem;
+    width: 36rem;
+     
+
+    @include m.tablet {
+        
+        width: 50rem;
+    }
 }
 
 
@@ -75,13 +91,28 @@
         text-align: center;
     }
 }
+.contenidoTodoTabla{
+    margin: 0 auto;
+    width: 43rem;
+    p{
+        font-size: 1.8rem;
+    }
 
+            @include m.tablet {
+                margin: 0 auto;
+            width: 70rem;
+
+            p{
+                font-size: 2rem;
+            }
+            }
+
+}
 
 .headerTablaVacaciones{
 
     display: flex;
     flex-direction: row;
-    width: 70rem;
     // background-color: red;
     height: 4.5rem;
     align-items: center;
@@ -101,7 +132,8 @@
 .contenidoTablaVacaciones {
     // box-shadow: -2px 0px 19px -4px rgba(90, 90, 90, 0.27);
     border: 0.1px solid rgb(223, 219, 219);
-
+    
+    
     height: 33rem;
     margin-bottom: 5rem;
     border-bottom-left-radius: 1rem;
@@ -112,32 +144,71 @@
 
 
       .divflat{
-          display: flex;
-          flex-direction: row;
-          margin-top: 1.5rem;
-          margin-bottom: 1.5rem;
-          height: 3.8rem;
-         border-bottom: 0.1px solid rgb(223, 219, 219);
+        display: flex;
+        flex-direction: row;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+        height: 3.8rem;
+       border-bottom: 0.1px solid rgb(223, 219, 219);
 
-             &:nth-last-child(2) {
-            border-bottom: unset;
-            }
-        
-
-          p {
-              width: 25%;
-
-
-              &:nth-child(3) {
- 
-               padding-left: 1.5rem;
-            }
-              &:nth-child(4) {
- 
-               padding-left: 3rem;
-            }
-  
+           &:nth-last-child(2) {
+          border-bottom: unset;
           }
+      
+
+        p {
+            width: 25%;
+
+
+            &:nth-child(1) {
+
+             padding-left: 1.2rem;
+          }
+            &:nth-child(2) {
+
+             padding-left: 1.5rem;
+          }
+            &:nth-child(3) {
+
+             padding-left: 1.5rem;
+          }
+            &:nth-child(4) {
+
+             padding-left: 3rem;
+          }
+
+        }
+
+
+           
+
+          @include m.tablet {
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            height: 3.8rem;
+           border-bottom: 0.1px solid rgb(223, 219, 219);
+  
+               &:nth-last-child(2) {
+              border-bottom: unset;
+              }
+          
+  
+            p {
+                width: 25%;
+  
+  
+                &:nth-child(3) {
+   
+                 padding-left: 1.5rem;
+              }
+                &:nth-child(4) {
+   
+                 padding-left: 3rem;
+              }
+    
+            }
+          }
+         
 
       
             
@@ -159,13 +230,36 @@
 .vacacionesTomadas{
     // background-color: red;
     margin-bottom: 2rem;
+   
+    width: 20rem;
+    margin: 0 auto;
+    margin-bottom: 2rem;
 
+    // margin-left: 20rem;
     p {
         text-align: left;
-        margin-left: 3.3rem;
+        
 
-        span{
-            // font-weight: bold;
-        }
+       
     }
+}
+
+
+.contenedorTitulo{
+
+    margin: 0 auto;
+    background-color: red;
+    width: 30rem;
+
+}
+
+.tituloInfoVacas{
+    text-align: center;
+    
+    padding: 0;
+    font-size: 2rem;
+    margin-top: 3.5rem;
+    // margin-bottom: rem;
+    // width: 90rem;
+ 
 }
