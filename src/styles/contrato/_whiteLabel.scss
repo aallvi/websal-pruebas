@@ -12,6 +12,7 @@
         margin-left: 3rem;
         font-size: 1.6rem;
         font-weight: bold;
+        // background-color: red;
 
 
     }
@@ -26,4 +27,30 @@
 
 
     }
+
+
+    
+}
+
+.contendorPencil{
+    display: flex;
+    // background-color: green;
+    width: 55%;
+    img {
+        width: 2rem;
+        cursor: pointer;
+    }
+}
+
+.botonPencil{
+    background: none;
+    border: none;
+    margin-left: -10rem;
+    margin-right: 10rem;
+}
+.botonPencilClave{
+    background: none;
+    border: none;
+    margin-left: -6rem;
+    margin-right: 10rem;
 }

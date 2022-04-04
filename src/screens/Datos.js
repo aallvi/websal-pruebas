@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { GreyLabel } from '../components/contratoydatos/GreyLabel'
 import { WhiteLabel } from '../components/contratoydatos/WhiteLabel'
 import { Loading } from '../components/Loading';
-import wave from '../assets/wave.svg'
+import pencil from '../assets/pencil-outline.svg'
+
 
 export const Datos = () => {
 
@@ -43,9 +44,36 @@ export const Datos = () => {
 
         <GreyLabel primerDato='Nombre' segundoDato={datos.nombre} />
 
-        <WhiteLabel primerDato='Email' segundoDato={datos.email}  />
+        <div className='whiteLabel'>
+            <div className='contendorPencil' >
+            <p className='texto' >Email </p>
 
-        <GreyLabel primerDato='Contraseña' segundoDato={datos.clave} />
+            <button className='botonPencil' >
+            <img src={pencil} alt='pencil' />
+
+            </button>
+
+            </div>
+            <p className='textoDos' >{datos.email}</p>
+            
+
+        </div>
+  
+
+        <div className='greyLabel'>
+            <div className='contendorPencil' >
+            <p className='texto' >Contraseña </p>
+
+            <button className='botonPencilClave' >
+            <img src={pencil} alt='pencil' />
+
+            </button>
+
+            </div>
+            <p className='textoDos' >{datos.clave}</p>
+            
+
+        </div>
 
         <WhiteLabel primerDato='RUT' segundoDato={datos.RUT}  />
 
