@@ -15,6 +15,8 @@ export const Liquidaciones = () => {
     mes:'Febrero 2022'
   },{
     mes:'Febrero 2022'
+  },{
+    mes:'Febrero 2022'
   }
   
   ]
