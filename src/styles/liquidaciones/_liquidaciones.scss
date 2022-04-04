@@ -38,20 +38,7 @@
     }
 
    
-    .verPdf{
-        padding: 0;
-        font-size: 1.8rem;
-        display: block;
-        text-align: center;
-        color: black;
-        // background-color: red;
-        width: fit-content;
-        margin: 0 auto;
-        margin-top: 9rem;
-        z-index: 999;
-
-        
-    }
+    
 }
 
 svg{
@@ -84,4 +71,50 @@ svg{
     grid-template-columns: repeat(3,1fr);
     gap: 1rem;
     }
+}
+
+
+.contenedorVer{
+    background-color: white;
+    border-radius: 1rem;
+    width: 12rem;
+    
+    height: 3.3rem;
+    z-index: 999;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    margin-top: 9rem;
+    margin-left: 12rem;
+// width: 30rem;
+
+    img {
+        width: 2.7rem;
+        // background-color: red;
+        position: absolute;
+        margin-left: 1.2rem;
+        margin-top: 0.2rem;
+
+
+    }
+
+
+    .verPdf{
+        padding: 0;
+        font-size: 1.8rem;
+        text-align: center;
+        display: block;
+        margin-top: 0.6rem;
+        margin-left: 1.2rem;
+        color: black;
+        z-index: 999;
+        // position:absolute;
+        // margin-left: 14rem;
+
+       
+
+
+        
+    }
+
 }
