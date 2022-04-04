@@ -7,7 +7,7 @@ export const Navbar = () => {
 
             <Link
                 
-                to="/"
+                to="/home"
             >
                 Home
             </Link>

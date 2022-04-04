@@ -28,19 +28,19 @@ export const NavigationLog = () => {
 
 
 
-<Route path='/' element={<Homescreen />} />
-<Route path='/liquidaciones' element={<Liquidaciones />} />
-<Route path='/licencias' element={<Licencias />} />
-<Route path='/certificados' element={<Certificados />} />
-<Route path='/contrato' element={<Contrato />} />
-<Route path='/datos' element={<Datos />} />
-<Route path='/vacaciones' element={<Vacaciones />} />
+        <Route path='/home' element={<Homescreen />} />
+        <Route path='/liquidaciones' element={<Liquidaciones />} />
+        <Route path='/licencias' element={<Licencias />} />
+        <Route path='/certificados' element={<Certificados />} />
+        <Route path='/contrato' element={<Contrato />} />
+        <Route path='/datos' element={<Datos />} />
+        <Route path='/vacaciones' element={<Vacaciones />} />
 
 
 
 
 
-</Routes>
+    </Routes>
 
 
     </div>

@@ -22,7 +22,7 @@ export const NavBar = () => {
 
 <div className='contenedorImg' >
           <NavLink
-                to="/"
+                to="/home"
               
               >
                 <img src={websal} alt='logo'  />
@@ -37,7 +37,7 @@ export const NavBar = () => {
       
         <li>
           <NavLink
-            to="/"
+            to="/home"
             className={({ isActive }) =>
               isActive ? 'activeClassName' : 'BotonNav'
             }

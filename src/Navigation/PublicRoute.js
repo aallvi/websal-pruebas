@@ -4,7 +4,7 @@ import { Navigate } from 'react-router-dom';
 import { Loading } from '../components/Loading';
 import { renuew } from '../store/actions/login.actions';
 
-export const PrivateRoute = ({children}) => {
+export const PublicRoute = ({children}) => {
 
     const dispatch =  useDispatch()
 
@@ -16,5 +16,5 @@ export const PrivateRoute = ({children}) => {
 
 
 
-  return autenticado === 'autenticado' ? children : <Navigate to='/login' /> 
+  return autenticado === 'autenticado' ? <Navigate to='/home' />  : children 
 }
