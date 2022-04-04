@@ -1,0 +1,87 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+
+
+.contenedorLiquidaciones{
+
+    margin: 0 auto;
+    background-color: v.$primario;
+    box-shadow: -2px 3px 19px -4px rgba(0,0,0,0.27);
+    width: 35rem;
+    height: 13rem;
+    // padding: 2rem;
+    border-radius: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    
+    img {
+        width: 2.7rem;
+        position: absolute;
+        z-index: 999;
+        margin-top: 1.7rem;
+        margin-left: 1.5rem;
+        color: v.$primario;
+
+    }
+     
+    p {
+    // text-align: center;
+        margin: 0;
+        padding: 0;
+        padding-left: 5.5rem;
+        font-size: 1.9rem;
+        position: absolute;
+        margin-top: 2rem;
+        z-index: 999;
+    }
+
+   
+    .verPdf{
+        padding: 0;
+        font-size: 1.8rem;
+        display: block;
+        text-align: center;
+        color: black;
+        // background-color: red;
+        width: fit-content;
+        margin: 0 auto;
+        margin-top: 9rem;
+        z-index: 999;
+
+        
+    }
+}
+
+svg{
+
+    position: absolute;
+    // overflow: hidden;
+    height:22.2rem;  
+    width: 35rem;
+    border-radius: 2rem;
+
+
+    @include m.tablet {
+        position: absolute!important;
+        overflow: hidden;
+        border-radius: 2rem;
+    // height:13.5rem; 
+    
+      
+       width: 35rem;
+    }
+    
+    
+}
+
+.rowLiquidaciones{
+    
+
+    @include m.desktop {
+        display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1rem;
+    }
+}

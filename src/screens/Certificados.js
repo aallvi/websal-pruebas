@@ -15,7 +15,7 @@ export const Certificados = () => {
   const [cargo, setCargo] = useState(false);
   const [renta, setRenta] = useState(false);
 
-  const [datos, setDatos] = useState('')
+  const [datos, setDatos] = useState('a')
   
 
   const anti = antiguedad === true ? '1' : ''
