@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import './navbar.css'
+import websal from '../assets/logowebsal.png'
 
 
 export const NavBar = () => {
@@ -19,7 +19,21 @@ export const NavBar = () => {
 
 
 <nav>
+
+<div className='contenedorImg' >
+          <NavLink
+                to="/"
+              
+              >
+                <img src={websal} alt='logo'  />
+
+          </NavLink>
+      </div>
+
+
       <ul>
+
+     
       
         <li>
           <NavLink
@@ -63,6 +77,17 @@ export const NavBar = () => {
             Certificados
           </NavLink>
         </li>
+        <li>
+          <NavLink
+            to="vacaciones"
+            className={({ isActive }) =>
+              isActive ? 'activeClassName' : 'BotonNav'
+            }
+          >
+            Vacaciones
+          </NavLink>
+        </li>
+        
 
         <li>
           <NavLink
@@ -84,17 +109,7 @@ export const NavBar = () => {
             Datos
           </NavLink>
         </li>
-        <li>
-          <NavLink
-            to="vacaciones"
-            className={({ isActive }) =>
-              isActive ? 'activeClassName' : 'BotonNav'
-            }
-          >
-            Vacaciones
-          </NavLink>
-        </li>
-        
+       
 
       </ul>
 
