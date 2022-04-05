@@ -1,24 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import websal from '../assets/logowebsal.png'
 
 
 export const NavBar = () => {
 
+   
+  const [toggleMenu, setToggleMenu] = useState(false)
 
-    let activeStyle = {
-        textDecoration: "underline"
-      };
-    
-      let activeClassName = "underline"
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth)
 
 
 
   return (
+
+
+
    
 
 
-<nav>
+<nav  >
 
 <div className='contenedorImg' >
           <NavLink
@@ -30,89 +31,99 @@ export const NavBar = () => {
           </NavLink>
       </div>
 
-
+      {toggleMenu || screenWidth > 500 &&
+      
       <ul>
 
      
       
-        <li>
-          <NavLink
-            to="/home"
-            className={({ isActive }) =>
-              isActive ? 'activeClassName' : 'BotonNav'
-            }
-          >
-            Home
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="liquidaciones"
-            className={({ isActive }) =>
-              isActive ? 'activeClassName' : 'BotonNav'
-            }
-          >
-            Liquidaciones
-          </NavLink>
-        </li>
+      <li>
+        <NavLink
+          to="/home"
+          className={({ isActive }) =>
+            isActive ? 'activeClassName' : 'BotonNav'
+          }
+        >
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="liquidaciones"
+          className={({ isActive }) =>
+            isActive ? 'activeClassName' : 'BotonNav'
+          }
+        >
+          Liquidaciones
+        </NavLink>
+      </li>
+    
+     
+      <li>
+        <NavLink
+          to="licencias"
+          className={({ isActive }) =>
+            isActive ? 'activeClassName' : 'BotonNav'
+          }
+        >
+          Licencias
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="certificados"
+          className={({ isActive }) =>
+            isActive ? 'activeClassName' : 'BotonNav'
+          }
+        >
+          Certificados
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="vacaciones"
+          className={({ isActive }) =>
+            isActive ? 'activeClassName' : 'BotonNav'
+          }
+        >
+          Vacaciones
+        </NavLink>
+      </li>
       
-       
-        <li>
-          <NavLink
-            to="licencias"
-            className={({ isActive }) =>
-              isActive ? 'activeClassName' : 'BotonNav'
-            }
-          >
-            Licencias
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="certificados"
-            className={({ isActive }) =>
-              isActive ? 'activeClassName' : 'BotonNav'
-            }
-          >
-            Certificados
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="vacaciones"
-            className={({ isActive }) =>
-              isActive ? 'activeClassName' : 'BotonNav'
-            }
-          >
-            Vacaciones
-          </NavLink>
-        </li>
-        
 
-        <li>
-          <NavLink
-            to="contrato"
-            className={({ isActive }) =>
-              isActive ? 'activeClassName' : 'BotonNav'
-            }
-          >
-            Contrato
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="datos"
-            className={({ isActive }) =>
-              isActive ? 'activeClassName' : 'BotonNav'
-            }
-          >
-            Datos
-          </NavLink>
-        </li>
-       
+      <li>
+        <NavLink
+          to="contrato"
+          className={({ isActive }) =>
+            isActive ? 'activeClassName' : 'BotonNav'
+          }
+        >
+          Contrato
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="datos"
+          className={({ isActive }) =>
+            isActive ? 'activeClassName' : 'BotonNav'
+          }
+        >
+          Datos
+        </NavLink>
+      </li>
 
-      </ul>
+      
+     
 
+    </ul>
+      
+      }
+
+
+     
+      <button className="icon" onClick={() => setToggleMenu(!toggleMenu) }  >
+        <i className="fa fa-bars"></i>
+      </button>
 
     </nav>
 
