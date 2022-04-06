@@ -37,31 +37,31 @@
         z-index: 999;
     }
 
-   
-    
-}
+    svg{
 
-svg{
-
-    position: absolute;
-    // overflow: hidden;
-    height:22.2rem;  
-    width: 35rem;
-    border-radius: 2rem;
-
-
-    @include m.tablet {
-        position: absolute!important;
-        overflow: hidden;
+        position: absolute;
+        // overflow: hidden;
+        height:22.2rem;  
+        width: 35rem;
         border-radius: 2rem;
-    // height:13.5rem; 
     
-      
-       width: 35rem;
+    
+        @include m.tablet {
+            position: absolute!important;
+            overflow: hidden;
+            border-radius: 2rem;
+        // height:13.5rem; 
+        
+          
+           width: 35rem;
+        }
+        
+        
     }
     
-    
 }
+
+
 
 .rowLiquidaciones{
     

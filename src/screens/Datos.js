@@ -3,6 +3,7 @@ import { GreyLabel } from '../components/contratoydatos/GreyLabel'
 import { WhiteLabel } from '../components/contratoydatos/WhiteLabel'
 import { Loading } from '../components/Loading';
 import pencil from '../assets/pencil-outline.svg'
+import { useNavigate } from 'react-router-dom';
 
 
 export const Datos = () => {
@@ -20,7 +21,7 @@ export const Datos = () => {
     estadocivil:'Soltero'
   })
 
-  
+  let navigate = useNavigate();
 
 
 
@@ -48,7 +49,7 @@ export const Datos = () => {
             <div className='contendorPencil' >
             <p className='texto' >Email </p>
 
-            <button className='botonPencil' >
+            <button className='botonPencil' onClick={ () => navigate('/cambiarEmail')} >
             <img src={pencil} alt='pencil' />
 
             </button>
@@ -64,7 +65,7 @@ export const Datos = () => {
             <div className='contendorPencil' >
             <p className='texto' >Contraseña </p>
 
-            <button className='botonPencilClave' >
+            <button className='botonPencilClave' onClick={ () => navigate('/cambiarClave')} >
             <img src={pencil} alt='pencil' />
 
             </button>

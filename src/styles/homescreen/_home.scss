@@ -1,0 +1,71 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+
+
+.contenedorApp{
+    // background-color: red;
+    
+    margin: 0 auto;
+    margin-top: 8rem;
+    box-shadow: -4px -1px 30px -10px rgba(192, 192, 192, 0.57);
+    border-radius: 2rem;
+    display: flex;
+    // height: 20rem;
+    padding: 3rem;
+    width: 40rem;
+    flex-direction: column;
+
+    .primer{
+        font-size: 1.7rem;
+        text-align: center;
+        margin-top: 4rem;
+        font-weight: 600;
+    }
+
+    p{
+        font-size: 1.7rem;
+        text-align: center;
+        // margin-top: 4rem;
+    }
+
+    img{
+        // margin-top: 1rem;
+    }
+
+    .frase{
+        width: 25rem;
+        margin: 0 auto;
+        margin-bottom: 1rem;
+    }
+
+
+
+    
+  
+
+
+}
+
+
+.contenedorWebApp{
+
+    // background-color: red;
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+
+
+.contendorAppstores{
+    // background-color: red;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 0.5rem;
+
+    .appstore{
+        margin-top: 8px;
+    }
+}

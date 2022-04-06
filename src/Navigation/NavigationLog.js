@@ -8,6 +8,8 @@ import { Contrato } from '../screens/Contrato'
 import { Datos } from '../screens/Datos'
 import { Vacaciones } from '../screens/Vacaciones'
 import { NavBar } from '../components/NavBar'
+import { ChangePass } from '../screens/CambiarDatos/ChangePass'
+import { ChangeEmail } from '../screens/CambiarDatos/ChangeEmail'
 
 
 export const NavigationLog = () => {
@@ -35,6 +37,8 @@ export const NavigationLog = () => {
         <Route path='/contrato' element={<Contrato />} />
         <Route path='/datos' element={<Datos />} />
         <Route path='/vacaciones' element={<Vacaciones />} />
+        <Route path='/cambiarClave' element={<ChangePass />} />
+        <Route path='/cambiarEmail' element={<ChangeEmail />} />
 
 
 

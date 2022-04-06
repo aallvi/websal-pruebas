@@ -54,6 +54,8 @@ ul {
     @include m.tablet {
         display: flex;
        flex-direction: row;
+       padding-left: 4rem;
+       padding-right: 4rem;
         
     }
 }
@@ -94,7 +96,7 @@ nav {
     @include m.tablet {
 
         display: flex;
-    flex-direction: row;
+        flex-direction: row;
 
         .icon {
             display: none;
