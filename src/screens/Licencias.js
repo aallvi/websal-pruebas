@@ -52,7 +52,7 @@ export const Licencias = () => {
 
 
   return (
-    <div className='VacationContainer' >
+    <div className='VacationContainer animate__animated animate__fadeIn' >
 
          <div className='titulo' >
          <p className='tituloLicencias' >Informacion sobre tus Licencias</p>

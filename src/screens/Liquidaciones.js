@@ -24,7 +24,7 @@ export const Liquidaciones = () => {
 
 
   return (
-    <>
+    <div className='animate__animated animate__fadeIn'>
       <div className='titulo' >
          <p >Tus Liquidaciones de Sueldo</p>
          </div> 
@@ -83,6 +83,6 @@ export const Liquidaciones = () => {
 
 
 
-    </>
+    </div>
   )
 }

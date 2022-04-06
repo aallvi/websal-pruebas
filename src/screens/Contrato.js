@@ -9,7 +9,7 @@ export const Contrato = () => {
 
 
   return (
-    <div className='contenedorContrato' >
+    <div className='contenedorContrato animate__animated animate__fadeIn' >
         
         <div className='headerContrato' >
            <p >Mi Contrato</p> 

@@ -1,8 +1,8 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import websapp from '../assets/Webapp.webp'
-import googleplay from '../assets/googleplay.webp'
-import appstore from '../assets/appstore.webp'
+import googleplay from '../assets/googleplay.png'
+import appstore from '../assets/appstore.png'
 
 
 export const Homescreen = () => {
@@ -11,7 +11,7 @@ export const Homescreen = () => {
 
 
   return (
-    <>
+    <div className='animate__animated animate__fadeIn'>
          <div className='titulo' >
          <p >Portal de Autoconsulta de Websal</p>
          </div> 
@@ -32,12 +32,12 @@ export const Homescreen = () => {
      <div className='contendorAppstores' >
       
       <a href='https://play.google.com/store/apps/details?id=com.appwebsal' target='_blank'  >
-         <img src={googleplay} width='160' />
+         <img src={googleplay} />
 
       </a>
 
       <a href='https://play.google.com/store/apps/details?id=com.appwebsal' target='_blank' >
-      <img className='appstore' src={appstore} width='160' />
+      <img className='appstore' src={appstore}  />
 
 
       </a>
@@ -53,7 +53,7 @@ export const Homescreen = () => {
     
     
     
-    </>
+    </div>
     
     
     

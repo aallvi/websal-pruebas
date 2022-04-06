@@ -38,7 +38,7 @@ export const Vacaciones = () => {
 
 
   return (
-    <div className='VacationContainer' >
+    <div className='VacationContainer animate__animated animate__fadeIn' >
 
        <div className='titulo' >
        <p >Informacion sobre tus Vacaciones</p>

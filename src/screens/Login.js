@@ -31,9 +31,11 @@ const sign =() => {
     })
       return
   }
+   
 
+  
 
-  dispatch(log(pe,px))
+  // dispatch(log(pe,px))
 
 
 }

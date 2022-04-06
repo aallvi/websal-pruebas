@@ -68,11 +68,11 @@ export const Certificados = () => {
   return (
    <>
 
-        <div className='titulo' >
+        <div className='titulo animate__animated animate__fadeIn' >
          <p>Genera tu certificado con los elementos que necesitas</p>
          </div> 
 
-      <div className='contenedorAllToggles' >
+      <div className='contenedorAllToggles animate__animated animate__fadeIn' >
           <div className='contenedorToggles' >
               <p>Antiguedad</p>
 
@@ -114,7 +114,7 @@ export const Certificados = () => {
       </div>
 
      
-      <button className='buttonCertificado' onClick={guardarCertificados} >
+      <button className='buttonCertificado animate__animated animate__fadeIn' onClick={guardarCertificados} >
             <p>Generar</p>
       </button>
 
@@ -127,7 +127,7 @@ export const Certificados = () => {
       : datos?  
 
 
-      <div className='contenedorCertificadoListo' >
+      <div className='contenedorCertificadoListo animate__animated animate__fadeIn' >
         <p>Certificado Listo</p> 
 
         <a href='https://google.com' target='_blank' className='verPdf' >Ver PDF</a>
