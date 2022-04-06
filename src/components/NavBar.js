@@ -10,13 +10,13 @@ export const NavBar = () => {
 
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
 
-
+console.log(screenWidth)
 
   return (
 
 
 
-   
+    // || screenWidth > 700 
 
 
 <nav  >
@@ -31,7 +31,94 @@ export const NavBar = () => {
           </NavLink>
       </div>
 
-      {toggleMenu || screenWidth > 500 &&
+      {toggleMenu  &&
+      
+      <ul>
+
+     
+      
+      <li>
+        <NavLink
+          to="/home"
+          className={({ isActive }) =>
+            isActive ? 'activeClassName' : 'BotonNav'
+          }
+        >
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="liquidaciones"
+          className={({ isActive }) =>
+            isActive ? 'activeClassName' : 'BotonNav'
+          }
+        >
+          Liquidaciones
+        </NavLink>
+      </li>
+    
+     
+      <li>
+        <NavLink
+          to="licencias"
+          className={({ isActive }) =>
+            isActive ? 'activeClassName' : 'BotonNav'
+          }
+        >
+          Licencias
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="certificados"
+          className={({ isActive }) =>
+            isActive ? 'activeClassName' : 'BotonNav'
+          }
+        >
+          Certificados
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="vacaciones"
+          className={({ isActive }) =>
+            isActive ? 'activeClassName' : 'BotonNav'
+          }
+        >
+          Vacaciones
+        </NavLink>
+      </li>
+      
+
+      <li>
+        <NavLink
+          to="contrato"
+          className={({ isActive }) =>
+            isActive ? 'activeClassName' : 'BotonNav'
+          }
+        >
+          Contrato
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="datos"
+          className={({ isActive }) =>
+            isActive ? 'activeClassName' : 'BotonNav'
+          }
+        >
+          Datos
+        </NavLink>
+      </li>
+
+      
+     
+
+    </ul>
+      
+      }
+      { screenWidth > 700 &&
       
       <ul>
 
