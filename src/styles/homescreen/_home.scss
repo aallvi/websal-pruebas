@@ -4,6 +4,7 @@
 
 
 .contenedorApp{
+
     // background-color: red;
     
     margin: 0 auto;
@@ -13,8 +14,8 @@
     display: flex;
     // height: 20rem;
     padding: 3rem;
-    width: 40rem;
     flex-direction: column;
+    width: 34rem;
 
     .primer{
         font-size: 1.7rem;
@@ -39,7 +40,14 @@
         margin-bottom: 1rem;
     }
 
+    
 
+    @include m.tablet {
+
+
+    width: 40rem;
+        
+    }
 
     
   
