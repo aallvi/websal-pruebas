@@ -54,8 +54,8 @@ ul {
     @include m.tablet {
         display: flex;
        flex-direction: row;
-       padding-left: 4rem;
-       padding-right: 4rem;
+       padding-left: 8rem;
+       padding-right: 8rem;
         
     }
 }
@@ -137,4 +137,33 @@ nav {
 
 .fa {
  font-size: 2.9rem;
+}
+
+
+.salir{
+
+
+    
+    
+    // margin-right: 9rem;
+    background-color: transparent;
+    border: none;
+    // background-color: red;
+    cursor: pointer;
+    margin-top: 1.7rem;
+
+    p{
+        font-size: 1.9rem;
+        color: red;
+        margin: 0;
+        padding: 0;
+    }
+
+    @include m.tablet {
+    margin-right: 9rem;
+    margin-top: 0;
+    }
+
+
+
 }

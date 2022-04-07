@@ -15,7 +15,7 @@ export const RecuperarClave = () => {
   const dispatch =  useDispatch()
    
    
-  const [datos, setDatos] = useState({validacion:2});
+  const [datos, setDatos] = useState({validacion:'1'});
 
   //  Variables primera etapa
 

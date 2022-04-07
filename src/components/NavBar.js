@@ -206,12 +206,15 @@ console.log(screenWidth)
       
       }
 
+      <button className="salir" onClick={() => console.log('saliendo') }  >
+        <p>Salir</p>
+      </button>
 
      
       <button className="icon" onClick={() => setToggleMenu(!toggleMenu) }  >
         <i className="fa fa-bars"></i>
       </button>
-
+   
     </nav>
 
 
