@@ -1,9 +1,10 @@
 import axios from 'axios';
 import React, { useState } from 'react'
+import ReactCodeInput from 'react-code-input';
 import { useDispatch } from 'react-redux';
 import { Loading } from '../components/Loading';
 import { renuew } from '../store/actions/login.actions';
-
+// import { reactCodeInput } from 'CodeInputField.scss'
 
 
 export const RecuperarClave = () => {
@@ -32,6 +33,7 @@ export const RecuperarClave = () => {
   const [codigo, setCodigo] = useState('');
   const [px, setClave] = useState('');
   const [pxAgain, setClaveAgain] = useState('');
+  console.log('qepasa',codigo)
 
   const [strcon, setStrcon] = useState('')
 
@@ -137,7 +139,7 @@ export const RecuperarClave = () => {
   
   
           }
-
+    
 
 
 
@@ -209,9 +211,11 @@ export const RecuperarClave = () => {
 
    console.log('pe',pe)
 
+  
 
-
-
+   const codePin = (codigo) => {
+    setCodigo(codigo)
+   }
 
 
 
@@ -233,8 +237,11 @@ export const RecuperarClave = () => {
               <p className='textoCodigoaMail' >Se ha enviado un código a tu email</p>
 
               <label  > Codigo recibido </label>
-              <input className='inputCodigoRecibido' type='text' value={codigo} onChange={e => setCodigo(e.target.value) } />
+              {/* <input className='inputCodigoRecibido' type='text' value={codigo} onChange={e => setCodigo(e.target.value) } /> */}
+              <div className='codeInput' >
+              <ReactCodeInput id="codigo" type='text' fields={4} value={codigo}  onChange={codePin}  />
 
+              </div>
 
 
 
