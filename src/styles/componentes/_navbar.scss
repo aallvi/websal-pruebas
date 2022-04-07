@@ -70,7 +70,7 @@ nav {
     text-align: center;
     background-color:white;
     width: 100%;
-    padding: 2rem;
+    padding: 2rem 0rem 2rem 2rem;
      
     // border-radius: 2rem;
     box-shadow: -4px -1px 30px -10px rgba(192, 192, 192, 0.57);
@@ -78,14 +78,14 @@ nav {
   
     
     .icon {
-        // float: right;
-        // display: block;
+       margin: 0;
         position: absolute;
         display: inline;
         top: 0;
         right: 0;
         margin-top: 18px;
-        margin-right: 10px;
+        // margin-right: 10px;
+        // background-color: red;
         background-color: transparent;
         border: none;
         cursor: pointer;
@@ -137,6 +137,8 @@ nav {
 
 .fa {
  font-size: 2.9rem;
+//  background-color: red;
+//  position: absolute;
 }
 
 
@@ -160,7 +162,7 @@ nav {
     }
 
     @include m.tablet {
-    margin-right: 9rem;
+    margin-left: 9rem;
     margin-top: 0;
     }
 

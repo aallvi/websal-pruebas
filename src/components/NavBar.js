@@ -40,6 +40,8 @@ console.log(screenWidth)
       <li>
         <NavLink
           to="/home"
+          onClick={() => setToggleMenu(false) }
+
           className={({ isActive }) =>
             isActive ? 'activeClassName' : 'BotonNav'
           }
@@ -50,6 +52,8 @@ console.log(screenWidth)
       <li>
         <NavLink
           to="liquidaciones"
+          onClick={() => setToggleMenu(false) }
+
           className={({ isActive }) =>
             isActive ? 'activeClassName' : 'BotonNav'
           }
@@ -62,6 +66,7 @@ console.log(screenWidth)
       <li>
         <NavLink
           to="licencias"
+          onClick={() => setToggleMenu(false) }
           className={({ isActive }) =>
             isActive ? 'activeClassName' : 'BotonNav'
           }
@@ -72,6 +77,7 @@ console.log(screenWidth)
       <li>
         <NavLink
           to="certificados"
+          onClick={() => setToggleMenu(false) }
           className={({ isActive }) =>
             isActive ? 'activeClassName' : 'BotonNav'
           }
@@ -82,6 +88,7 @@ console.log(screenWidth)
       <li>
         <NavLink
           to="vacaciones"
+          onClick={() => setToggleMenu(false) }
           className={({ isActive }) =>
             isActive ? 'activeClassName' : 'BotonNav'
           }
@@ -94,6 +101,7 @@ console.log(screenWidth)
       <li>
         <NavLink
           to="contrato"
+          onClick={() => setToggleMenu(false) }
           className={({ isActive }) =>
             isActive ? 'activeClassName' : 'BotonNav'
           }
@@ -104,6 +112,7 @@ console.log(screenWidth)
       <li>
         <NavLink
           to="datos"
+          onClick={() => setToggleMenu(false) }
           className={({ isActive }) =>
             isActive ? 'activeClassName' : 'BotonNav'
           }
@@ -112,7 +121,10 @@ console.log(screenWidth)
         </NavLink>
       </li>
 
-      
+      <button className="salir" onClick={() => console.log('saliendo') }  >
+        <p>Salir</p>
+      </button>
+
      
 
     </ul>
@@ -127,6 +139,7 @@ console.log(screenWidth)
       <li>
         <NavLink
           to="/home"
+          onClick={() => setToggleMenu(false) }
           className={({ isActive }) =>
             isActive ? 'activeClassName' : 'BotonNav'
           }
@@ -137,6 +150,7 @@ console.log(screenWidth)
       <li>
         <NavLink
           to="liquidaciones"
+          onClick={() => setToggleMenu(false) }
           className={({ isActive }) =>
             isActive ? 'activeClassName' : 'BotonNav'
           }
@@ -149,6 +163,7 @@ console.log(screenWidth)
       <li>
         <NavLink
           to="licencias"
+          onClick={() => setToggleMenu(false) }
           className={({ isActive }) =>
             isActive ? 'activeClassName' : 'BotonNav'
           }
@@ -159,6 +174,7 @@ console.log(screenWidth)
       <li>
         <NavLink
           to="certificados"
+          onClick={() => setToggleMenu(false) }
           className={({ isActive }) =>
             isActive ? 'activeClassName' : 'BotonNav'
           }
@@ -169,6 +185,7 @@ console.log(screenWidth)
       <li>
         <NavLink
           to="vacaciones"
+          onClick={() => setToggleMenu(false) }
           className={({ isActive }) =>
             isActive ? 'activeClassName' : 'BotonNav'
           }
@@ -181,6 +198,7 @@ console.log(screenWidth)
       <li>
         <NavLink
           to="contrato"
+          onClick={() => setToggleMenu(false) }
           className={({ isActive }) =>
             isActive ? 'activeClassName' : 'BotonNav'
           }
@@ -191,6 +209,7 @@ console.log(screenWidth)
       <li>
         <NavLink
           to="datos"
+          onClick={() => setToggleMenu(false) }
           className={({ isActive }) =>
             isActive ? 'activeClassName' : 'BotonNav'
           }
@@ -199,16 +218,16 @@ console.log(screenWidth)
         </NavLink>
       </li>
 
-      
+      <button className="salir" onClick={() => console.log('saliendo') }  >
+        <p>Salir</p>
+      </button>
+
      
 
     </ul>
       
       }
 
-      <button className="salir" onClick={() => console.log('saliendo') }  >
-        <p>Salir</p>
-      </button>
 
      
       <button className="icon" onClick={() => setToggleMenu(!toggleMenu) }  >
