@@ -130,7 +130,7 @@ console.log(screenWidth)
     </ul>
       
       }
-      { screenWidth > 700 &&
+      { screenWidth > 770 &&
       
       <ul>
 
