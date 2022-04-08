@@ -27,7 +27,7 @@ export const Navigation = () => {
 
     
           
-          <Route path="/login"   element={
+          <Route path="/"   element={
                  <PublicRoute>
                    <Login/>
                  </PublicRoute>
