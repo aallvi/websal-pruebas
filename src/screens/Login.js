@@ -35,7 +35,7 @@ const sign =() => {
 
   
 
-  // dispatch(log(pe,px))
+  dispatch(log(pe,px))
 
 
 }

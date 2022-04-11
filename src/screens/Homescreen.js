@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import websapp from '../assets/Webapp.webp'
+import websapp from '../assets/webceleste.png'
 import googleplay from '../assets/googleplay.png'
 import appstore from '../assets/appstore.png'
 
