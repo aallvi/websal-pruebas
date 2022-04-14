@@ -70,23 +70,54 @@ nav {
     // margin: 0 auto;
     box-shadow: -4px -1px 30px -10px rgba(192, 192, 192, 0.57);
 
-  
-    
-    .icon {
-       margin: 0;
-        position: absolute;
-        display: inline;
-        top: 0;
-        right: 0;
-        margin-top: 18px;
-        // margin-right: -30px;
-        // background-color: red;
+    .hamburger{
         background-color: transparent;
         border: none;
+        outline: none;
         cursor: pointer;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-top: 19px;
+        margin-right: 10px;
+      }
+    
+    // .icon {
+    //    margin: 0;
+    //     position: absolute;
+    //     display: inline;
+    //     top: 0;
+    //     right: 0;
+    //     margin-top: 18px;
+    //     margin-right: 10px;
+    //     // background-color: red;
+    //     background-color: transparent;
+    //     border: none;
+    //     cursor: pointer;
        
    
-      }
+    //   }
+
+    .line{
+        display: block;
+        width: 35px;
+        height: 3px;
+        background-color: rgb(3, 3, 3);
+        // margin-block: 10px;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        transition: transform .5s, opacity .25s
+    }
+
+    .hamburger.active .line:nth-child(1){
+        transform: translateY(13px) rotate(45deg)
+    }
+    .hamburger.active .line:nth-child(3){
+        transform: translateY(-13px) rotate(-45deg)
+    }
+    .hamburger.active .line:nth-child(2){
+        opacity: 0;
+    }
 
     @include m.tablet {
 
@@ -96,6 +127,11 @@ nav {
         .icon {
             display: none;
           }
+
+
+        .hamburger{
+            display: none;
+        }
           
 
 
@@ -161,3 +197,4 @@ nav {
 
 
 }
+

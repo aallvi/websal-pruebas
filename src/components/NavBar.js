@@ -8,6 +8,8 @@ export const NavBar = () => {
    
   const [toggleMenu, setToggleMenu] = useState(false)
 
+  let claseMenu = toggleMenu ? 'hamburger active' : 'hamburger'
+
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
 
 console.log(screenWidth)
@@ -230,8 +232,14 @@ console.log(screenWidth)
 
 
      
-      <button className="icon" onClick={() => setToggleMenu(!toggleMenu) }  >
+      {/* <button className="icon" onClick={() => setToggleMenu(!toggleMenu) }  >
         <i className="fa fa-bars"></i>
+      </button> */}
+
+      <button type='button' className={claseMenu} onClick={() => setToggleMenu(!toggleMenu) } >
+        <span className='line'></span>
+        <span className='line'></span>
+        <span className='line'></span>
       </button>
    
     </nav>
