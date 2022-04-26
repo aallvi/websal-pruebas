@@ -41,7 +41,12 @@ export const Certificados = () => {
           
         } catch (error) {
           console.log(error)
+          Swal.fire({
+            title: 'Error de conexion',
+            text: 'Intentalo otra vez',
+            confirmButtonColor:'#2ec1db',
             
+          })
         }
 
        
@@ -59,7 +64,7 @@ export const Certificados = () => {
 
        console.log('generando...')
 
-      return
+      
       consultarDatos()
 
   }
@@ -76,36 +81,36 @@ export const Certificados = () => {
           <div className='contenedorToggles' >
               <p>Antiguedad</p>
 
-              <label class="switch">
+              <label className="switch">
               <input type="checkbox" checked={antiguedad} onChange={() => setAntiguedad(!antiguedad) } />
-              <span class="slider round"></span>
+              <span className="slider round"></span>
               </label>
 
           </div>
           <div className='contenedorToggles' >
               <p>Tipo Contrato</p>
 
-              <label class="switch">
+              <label className="switch">
               <input type="checkbox" checked={tipoContrato} onChange={() => setTipoContrato(!tipoContrato) } />
-              <span class="slider round"></span>
+              <span className="slider round"></span>
               </label>
 
           </div>
           <div className='contenedorToggles' >
               <p>Cargo</p>
 
-              <label class="switch">
+              <label className="switch">
               <input type="checkbox" checked={cargo} onChange={() => setCargo(!cargo) } />
-              <span class="slider round"></span>
+              <span className="slider round"></span>
               </label>
 
           </div>
           <div className='contenedorToggles' >
               <p>Renta</p>
 
-              <label class="switch">
+              <label className="switch">
               <input type="checkbox" checked={renta} onChange={() => setRenta(!renta) } />
-              <span class="slider round"></span>
+              <span className="slider round"></span>
               </label>
 
           </div>

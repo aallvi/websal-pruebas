@@ -1,12 +1,56 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { GreyLabel } from '../components/contratoydatos/GreyLabel'
 import { WhiteLabel } from '../components/contratoydatos/WhiteLabel'
 import { Loading } from '../components/Loading';
 import pencil from '../assets/pencil-outline.svg'
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import axios from 'axios';
+import Swal from 'sweetalert2'
 
 
 export const Datos = () => {
+
+
+  const strcon = useSelector(state => state.login.token)
+
+
+
+    const consultarDatos = async () => {
+        try {
+
+            const response = await axios.post('https://www.websal.com/api/autoconsulta/datos.asp',
+             {
+                strcon
+             });
+
+             if(response.data.nombre){
+              setDatos(response.data)
+              
+             }
+
+
+                
+            } catch (error) {
+              
+              Swal.fire({
+                title: 'Error de conexion',
+                text: 'Intentalo otra vez',
+                confirmButtonColor:'#2ec1db',
+                
+              })
+              
+                
+            }
+
+
+    }
+      useEffect(() => {
+        consultarDatos()
+      }, [])
+
+
+
 
   const [datos, setDatos] = useState({
     nombre:'Alvaro Leiva',

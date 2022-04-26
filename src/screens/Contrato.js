@@ -1,9 +1,51 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import { GreyLabel } from '../components/contratoydatos/GreyLabel'
 import { WhiteLabel } from '../components/contratoydatos/WhiteLabel'
+import Swal from 'sweetalert2'
 
 
 export const Contrato = () => {
+
+  const strcon = useSelector(state => state.login.token)
+
+  const [datos, setDatos] = useState({})
+
+
+    const consultarDatos = async () => {
+        try {
+
+            const response = await axios.post('https://www.websal.com/api/autoconsulta/contrato.asp',
+             {
+                strcon
+             });
+
+             if(response.data.afp){
+              setDatos(response.data)
+             }
+                
+            } catch (error) {
+              
+              Swal.fire({
+                title: 'Error de conexion',
+                text: 'Intentalo otra vez',
+                confirmButtonColor:'#2ec1db',
+                
+              })
+              
+                
+            }
+
+
+    }
+      useEffect(() => {
+          
+
+        consultarDatos()
+
+
+      }, [])
 
 
 

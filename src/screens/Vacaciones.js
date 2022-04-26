@@ -1,8 +1,66 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import FlatList from 'flatlist-react';
+import axios from 'axios'
+import { useSelector } from 'react-redux';
+import Swal from 'sweetalert2'
 
 
 export const Vacaciones = () => {
+
+  const strcon = useSelector(state => state.login.token)
+
+
+  const [datos, setDatos] = useState({tomadas:0})
+
+  const [vacacionesTomadas, setvacacionesTomadas] = useState([])
+
+      const consultarDatos = async () => {
+
+        
+        try {
+
+            const response = await axios.post('https://www.websal.com/api/autoconsulta/vacaciones.asp',
+            {
+                strcon
+            });
+              
+
+            if(response.data.resultado){
+
+              // Alert.alert("Sin información","No hay información disponible", );
+              setDatos(response.data)
+
+                return
+            }
+        
+              setDatos(response.data)
+              // console.log(response.data)
+            //  console.log('respuesta',response.data.tomadas)
+            setvacacionesTomadas(response.data.tomadas)
+
+                
+            } catch (error) {
+              console.log(error)
+              Swal.fire({
+                title: 'Error de conexion',
+                text: 'Intentalo otra vez',
+                confirmButtonColor:'#2ec1db',
+                
+              })
+              
+                
+            }
+
+
+    }
+
+
+    useEffect(() => {
+     
+     consultarDatos()
+
+    }, [])
+    
 
    const vacas = [
     {
@@ -114,8 +172,8 @@ export const Vacaciones = () => {
 
                   <div className='contenidoTablaVacaciones' >
 
-                      <FlatList list={vacas} renderItem={item => 
-                              <div className='divflat' >
+                      <FlatList list={vacas} renderItem={(item,index) => 
+                              <div key={index} className='divflat' >
                                   <p>{item.desde}</p>
                                   <p>{item.hasta}</p>
                                   <p>{item.normales}</p>

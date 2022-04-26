@@ -1,8 +1,75 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import FlatList from 'flatlist-react';
+import { useSelector } from 'react-redux';
+import axios from 'axios'
+import Swal from 'sweetalert2'
 
 
 export const Licencias = () => {
+
+  const strcon = useSelector(state => state.login.token)
+
+
+
+      
+  const [datos, setDatos] = useState({})
+
+  const [loading, setLoading] = useState(true);
+  const [isRefreshing, setIsRefreshing] = useState(false)
+
+
+
+  const consultarDatos = async () => {
+      try {
+
+          const response = await axios.post('https://www.websal.com/api/autoconsulta/licencias.asp',
+           {
+              strcon
+           });
+
+
+           if(response.data.licencias) {
+            setDatos(response.data.licencias)
+            setLoading(false)
+
+           }else {
+            setDatos(response.data)
+            setLoading(false)
+             
+           }
+
+            
+           
+
+              
+          } catch (error) {
+            console.log(error)
+            setLoading(false)
+            Swal.fire({
+              title: 'Error de conexion',
+              text: 'Intentalo otra vez',
+              confirmButtonColor:'#2ec1db',
+              // customClass: 'slow-animation'
+              // animation:false,
+              // toast:true
+            })
+
+              
+          }
+
+
+  }
+    useEffect(() => {
+        
+
+      consultarDatos()
+
+
+    }, [])
+
+
+
+
 
   const vacas = [
     {
@@ -76,8 +143,8 @@ export const Licencias = () => {
 
                   <div className='contenidoTablaLicencias' >
 
-                      <FlatList list={vacas} renderItem={item => 
-                              <div className='divflat' >
+                      <FlatList list={vacas} renderItem={(item,index) => 
+                              <div key={index} className='divflat' >
                                   <p>{item.desde}</p>
                                   <p>{item.hasta}</p>
                                   <p>{item.normales}</p>
