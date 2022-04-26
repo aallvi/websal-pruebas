@@ -6,7 +6,6 @@ import { renuew } from '../store/actions/login.actions';
 
 export const PrivateRoute = ({children}) => {
 
-    const dispatch =  useDispatch()
 
     // useSelector(state => state.login.autenticado)
     const autenticado = useSelector(state => state.login.autenticado)
@@ -17,5 +16,5 @@ export const PrivateRoute = ({children}) => {
 
 
 
-  return autenticado === 'autenticado' ? children : <Navigate to='/' /> 
+  return autenticado === 'autorizado' ? children : <Navigate to='/' /> 
 }

@@ -19,7 +19,7 @@ export const Vacaciones = () => {
         
         try {
 
-            const response = await axios.post('https://www.websal.com/api/autoconsulta/vacaciones.asp',
+            const response = await axios.post('https://aqueous-fjord-68634.herokuapp.com/https://www.websal.com/api/autoconsulta/vacaciones.asp',
             {
                 strcon
             });
@@ -32,9 +32,9 @@ export const Vacaciones = () => {
 
                 return
             }
-        
+         
               setDatos(response.data)
-              // console.log(response.data)
+              console.log(response.data)
             //  console.log('respuesta',response.data.tomadas)
             setvacacionesTomadas(response.data.tomadas)
 
@@ -114,7 +114,7 @@ export const Vacaciones = () => {
 
                           </div>
 
-                          <p className='textoRightData' > 01/08/2020 </p>
+                          <p className='textoRightData' > {datos.contratoDesde ? datos.contratoDesde : '' } </p>
 
                     </div>
 
@@ -127,7 +127,7 @@ export const Vacaciones = () => {
                                 </p>
 
                           </div>
-                          <p className='textoRightData' > 25,1 Dias Habiles </p>
+                          <p className='textoRightData' > {datos.saldoNormales ? datos.saldoNormales.replace('.',',') : datos.saldoNormales } {!datos.resultado ? 'Días Hábiles' : ''} </p>
                       
       
                     </div>
@@ -142,7 +142,7 @@ export const Vacaciones = () => {
 
                           </div>
 
-                          <p className='textoRightData' > 0 Dias Habiles </p>
+                          <p className='textoRightData' > {datos.saldoProgresivas} {!datos.resultado ? 'Días Hábiles' : ''} </p>
 
 
                     </div>
@@ -150,7 +150,7 @@ export const Vacaciones = () => {
             </div>
 
            <div className='vacacionesTomadas' >
-               <p  >Vacaciones Tomadas: <span>{vacas.length} </span> </p>
+               <p  >Vacaciones Tomadas: <span>{vacacionesTomadas.length} </span> </p>
 
            </div>
 
@@ -172,7 +172,7 @@ export const Vacaciones = () => {
 
                   <div className='contenidoTablaVacaciones' >
 
-                      <FlatList list={vacas} renderItem={(item,index) => 
+                      <FlatList list={vacacionesTomadas} renderItem={(item,index) => 
                               <div key={index} className='divflat' >
                                   <p>{item.desde}</p>
                                   <p>{item.hasta}</p>

@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 import { GreyLabel } from '../components/contratoydatos/GreyLabel'
 import { WhiteLabel } from '../components/contratoydatos/WhiteLabel'
 import Swal from 'sweetalert2'
+import { Loading } from '../components/Loading'
 
 
 export const Contrato = () => {
@@ -16,7 +17,7 @@ export const Contrato = () => {
     const consultarDatos = async () => {
         try {
 
-            const response = await axios.post('https://www.websal.com/api/autoconsulta/contrato.asp',
+            const response = await axios.post('https://aqueous-fjord-68634.herokuapp.com/https://www.websal.com/api/autoconsulta/contrato.asp',
              {
                 strcon
              });
@@ -24,6 +25,8 @@ export const Contrato = () => {
              if(response.data.afp){
               setDatos(response.data)
              }
+
+             console.log('resp',response.data)
                 
             } catch (error) {
               
@@ -51,58 +54,70 @@ export const Contrato = () => {
 
 
   return (
-    <div className='contenedorContrato animate__animated animate__fadeIn' >
-        
-        <div className='headerContrato' >
+
+    <>
+    
+
+
+      {datos.desde ? 
+      
+      <div className='contenedorContrato animate__animated animate__fadeIn' >
+
+      <div className='headerContrato' >
            <p >Mi Contrato</p> 
            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 79 1440 320">
-           <path fill="#B3F5FE" fill-opacity="1" d="M0,256L120,256C240,256,480,256,720,234.7C960,213,1200,171,1320,149.3L1440,128L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path>
+           <path fill="#B3F5FE" fillOpacity="1" d="M0,256L120,256C240,256,480,256,720,234.7C960,213,1200,171,1320,149.3L1440,128L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path>
         </svg>
         </div>
 
-        <GreyLabel primerDato='Empresa' segundoDato='Websal Sistemas de Gestion S.P.A' />
+        <GreyLabel primerDato='Empresa' segundoDato={datos.razonSocial} />
 
-        <WhiteLabel primerDato='Tipo de Contrato' segundoDato='Indefinido'  />
+        <WhiteLabel primerDato='Tipo de Contrato' segundoDato={datos.tipo}  />
 
-        <GreyLabel primerDato='Inicio del Contrato' segundoDato='01/08/2020' />
+        <GreyLabel primerDato='Inicio del Contrato' segundoDato={datos.desde} />
 
-        <WhiteLabel primerDato='Termino del Contrato' segundoDato='-'  />
+        <WhiteLabel primerDato='Termino del Contrato' segundoDato={datos.hasta}  />
 
-        <GreyLabel primerDato='Centro de Costo' segundoDato='Administracion' />
+        <GreyLabel primerDato='Centro de Costo' segundoDato={datos.cc} />
 
-        <WhiteLabel primerDato='Sucursal' segundoDato='Matriz'  />
+        <WhiteLabel primerDato='Sucursal' segundoDato={datos.sucursal}  />
 
-        <GreyLabel primerDato='Cargo' segundoDato='Jefe de Proyecto' />
+        <GreyLabel primerDato='Cargo' segundoDato={datos.cargo} />
 
-        <WhiteLabel primerDato='AFP' segundoDato='Uno'  />
+        <WhiteLabel primerDato='AFP' segundoDato={datos.afp}  />
 
-        <GreyLabel primerDato='Cuenta 2' segundoDato='$ 0' />
+        <GreyLabel primerDato='Cuenta 2' segundoDato={datos.cuenta2} />
 
-        <WhiteLabel primerDato='APV' segundoDato='$ 0'  />
+        <WhiteLabel primerDato='APV' segundoDato={datos.apv}  />
 
-        <GreyLabel primerDato='Isapre' segundoDato='Vida Tres' />
+        <GreyLabel primerDato='Isapre' segundoDato={datos.isapre} />
 
-        <WhiteLabel primerDato='CCAF' segundoDato='SIN CCAF'  />
+        <WhiteLabel primerDato='CCAF' segundoDato={datos.ccaf}  />
 
-        <GreyLabel primerDato='Mutual' segundoDato='SIN MUTUAL (ISL)' />
+        <GreyLabel primerDato='Mutual' segundoDato={datos.mutual} />
 
-        <WhiteLabel primerDato='Plan' segundoDato='UF 5,67'  />
+        <WhiteLabel primerDato='Plan' segundoDato={`UF ${datos.planUf.replace('.',',')}`}  />
 
-        <GreyLabel primerDato='Mutual' segundoDato='0,93' />
-
-
-
-
-
+        <GreyLabel primerDato='Tasa de Accidentes' segundoDato={datos.tasaAccidentes.replace('.',',')} />
+      
+      
+      </div>
 
 
+        :
+
+          <div className='marginTopLoading' >
+            <Loading />
+          </div> 
 
 
+      
+    
+    
+      }
+        
+    
 
-
-
-
-
-    </div>
+    </>
   )
 }

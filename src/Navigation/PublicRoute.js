@@ -6,11 +6,6 @@ import { renuew } from '../store/actions/login.actions';
 
 export const PublicRoute = ({children}) => {
 
-    const dispatch =  useDispatch()
-
-
-    // useSelector(state => state.login.autenticado)
-
   const autenticado = useSelector(state => state.login.autenticado)
   
 
@@ -18,5 +13,5 @@ export const PublicRoute = ({children}) => {
 
 
 
-  return autenticado === 'autenticado' ? <Navigate to='/home' />  : children 
+  return autenticado === 'autorizado' ? <Navigate to='/home' />  : children 
 }

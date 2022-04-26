@@ -14,7 +14,7 @@ export const Login = () => {
 
   let navigate = useNavigate();
 
-  const [pe, setPe] = useState("335712")
+  const [pe, setPe] = useState("")
   const [px, setPx] = useState("")
 
 
@@ -76,7 +76,7 @@ const sign =() => {
           <input type='text' value={pe} onChange={e => setPe(e.target.value) } />
 
           <label> Clave </label>
-          <input type='text' value={px} onChange={e => setPx(e.target.value) } />
+          <input type='password'  value={px} onChange={e => setPx(e.target.value) } />
 
 
            <button type='button' className='ingresar' onClick={ sign} >

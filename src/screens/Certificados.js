@@ -9,14 +9,15 @@ export const Certificados = () => {
 
   const strcon = useSelector(state => state.login.token)
 
-
+  console.log(strcon)
   const [antiguedad, setAntiguedad] = useState(false)
   const [tipoContrato, setTipoContrato] = useState(false);
   const [cargo, setCargo] = useState(false);
   const [renta, setRenta] = useState(false);
 
-  const [datos, setDatos] = useState('a')
+  const [datos, setDatos] = useState(['link'])
   
+  console.log('pdf',datos)
 
   const anti = antiguedad === true ? '1' : ''
   const tipo = tipoContrato === true ? '2' : ''
@@ -30,14 +31,15 @@ export const Certificados = () => {
   const consultarDatos = async () => {
     
     try {
-        
+        setDatos([])
 
-        const response = await axios.post('https://www.websal.cl/api/autoconsulta/certificados.asp',
+        const response = await axios.post('https://aqueous-fjord-68634.herokuapp.com/https://www.websal.com/api/autoconsulta/certificados.asp',
          {
             strcon,certificados
          });
 
-          setDatos(response.data)
+          setDatos(response.data.split('"')[3])
+          // console.log('resp',response.data.split('"')[3])
           
         } catch (error) {
           console.log(error)
@@ -125,17 +127,17 @@ export const Certificados = () => {
 
     {
 
-      datos==='cargando' ? 
+      datos.length===0 ? 
 
       <Loading />
 
-      : datos?  
+      : datos.length > 1?  
 
 
       <div className='contenedorCertificadoListo animate__animated animate__fadeIn' >
         <p>Certificado Listo</p> 
 
-        <a href='https://google.com' target='_blank' className='verPdf' >Ver PDF</a>
+        <a href={datos} target='_blank' className='verPdf' >Ver PDF</a>
       </div>
 
       : null

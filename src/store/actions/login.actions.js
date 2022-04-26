@@ -12,7 +12,7 @@ export const log = (pe,px) => {
                        
     
             try {
-                const response = await axios.post('https://www.websal.com/api/autoconsulta/login.asp',
+                const response = await axios.post('https://aqueous-fjord-68634.herokuapp.com/https://www.websal.com/api/autoconsulta/login.asp',
                 {
                     pe,px
                 });

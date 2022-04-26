@@ -14,12 +14,13 @@ export const Datos = () => {
 
   const strcon = useSelector(state => state.login.token)
 
+  const [datos, setDatos] = useState({})
 
 
     const consultarDatos = async () => {
         try {
 
-            const response = await axios.post('https://www.websal.com/api/autoconsulta/datos.asp',
+            const response = await axios.post('https://aqueous-fjord-68634.herokuapp.com/https://www.websal.com/api/autoconsulta/datos.asp',
              {
                 strcon
              });
@@ -29,7 +30,7 @@ export const Datos = () => {
               
              }
 
-
+               console.log('resp',response.data)
                 
             } catch (error) {
               
@@ -52,36 +53,26 @@ export const Datos = () => {
 
 
 
-  const [datos, setDatos] = useState({
-    nombre:'Alvaro Leiva',
-    email:'aleiva97@gmail.com',
-    clave:'*****',
-    RUT:'19605692-0',
-    celular:'569 62121886',
-    genero:'Masculino',
-    direccion:'Carlos Dickens 2150, La Reina',
-    fecha:'16/01/1997',
-    nacionalidad:'Chilena',
-    estadocivil:'Soltero'
-  })
 
   let navigate = useNavigate();
 
 
 
   return (
-    <div className='contenedorContrato animate__animated animate__fadeIn' >
+    <>
+    
+    
 
 
       {
         datos.nombre ?
 
-         <>
+         <div className='contenedorContrato animate__animated animate__fadeIn' >
 
         <div className='headerContrato' >
         <p >Mis Datos</p> 
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 79 1440 320">
-          <path fill="#B3F5FE" fill-opacity="1" d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+          <path fill="#B3F5FE" fillOpacity="1" d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
         </svg>
         </div>
 
@@ -105,22 +96,22 @@ export const Datos = () => {
         </div>
   
 
-        <div className='greyLabel'>
-            <div className='contendorPencil' >
-            <p className='texto' >Contraseña </p>
+              <div className='greyLabel'>
+                        <div className='contendorPencil' >
+                        <p className='texto' >Contraseña </p>
 
-            <button className='botonPencilClave' onClick={ () => navigate('/cambiarClave')} >
-            <img src={pencil} alt='pencil' />
+                        <button className='botonPencilClave' onClick={ () => navigate('/cambiarClave')} >
+                        <img src={pencil} alt='pencil' />
 
-            </button>
+                        </button>
 
-            </div>
-            <p className='textoDos' >{datos.clave}</p>
-            
+                        </div>
+                        <p className='textoDos' >*******</p>
+                        
 
-        </div>
+              </div>
 
-        <WhiteLabel primerDato='RUT' segundoDato={datos.RUT}  />
+        <WhiteLabel primerDato='RUT' segundoDato={datos.personaId}  />
 
         <GreyLabel primerDato='Celular' segundoDato={datos.celular} />
 
@@ -128,15 +119,17 @@ export const Datos = () => {
 
         <GreyLabel primerDato='Dirección' segundoDato={datos.direccion} />
 
-        <WhiteLabel primerDato='Fecha de Nacimiento' segundoDato={datos.fecha}  />
+        <WhiteLabel primerDato='Fecha de Nacimiento' segundoDato={datos.nacimiento}  />
 
         <GreyLabel primerDato='Nacionalidad' segundoDato={datos.nacionalidad} />
 
-        <WhiteLabel primerDato='Estado Civil' segundoDato={datos.estadocivil} />
+        <WhiteLabel primerDato='Estado Civil' segundoDato={datos.estadoCivil} />
          
-         </>
+         </div>
 
-         : <Loading />
+              : <div className='marginTopLoading' >
+                  <Loading />
+              </div> 
       }
         
         
@@ -145,6 +138,8 @@ export const Datos = () => {
 
 
 
-    </div>
+   
+
+    </>
   )
 }

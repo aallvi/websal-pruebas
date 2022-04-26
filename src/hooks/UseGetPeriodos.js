@@ -20,7 +20,7 @@ export const useGetPeriodos = () => {
       // setisLoading(true
         try {
 
-            const response = await axios.post('https://www.websal.com/api/autoconsulta/liquidaciones.asp',
+            const response = await axios.post('https://aqueous-fjord-68634.herokuapp.com/https://www.websal.com/api/autoconsulta/liquidaciones.asp',
              {
                 strcon
              });
@@ -66,13 +66,7 @@ export const useGetPeriodos = () => {
       
         const datosFiltrados = datos.filter(dat => dat.link !== 0)
         
-      
-      
-      
-
-
-      
-          
+   
     
 
     

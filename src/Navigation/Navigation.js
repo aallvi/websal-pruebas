@@ -6,7 +6,6 @@ import { PrimeraVez } from '../screens/PrimeraVez'
 import { RecuperarClave } from '../screens/RecuperarClave'
 import { renuew } from '../store/actions/login.actions'
 import { NavigationLog } from './NavigationLog'
-import { NavigationLogPublic } from './NavigationLogPublic'
 import { PrivateRoute } from './PrivateRoute'
 import { PublicRoute } from './PublicRoute'
 

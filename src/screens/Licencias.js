@@ -16,13 +16,14 @@ export const Licencias = () => {
 
   const [loading, setLoading] = useState(true);
   const [isRefreshing, setIsRefreshing] = useState(false)
-
+ 
+  console.log('licencias',datos)
 
 
   const consultarDatos = async () => {
       try {
 
-          const response = await axios.post('https://www.websal.com/api/autoconsulta/licencias.asp',
+          const response = await axios.post('https://aqueous-fjord-68634.herokuapp.com/https://www.websal.com/api/autoconsulta/licencias.asp',
            {
               strcon
            });
@@ -37,7 +38,7 @@ export const Licencias = () => {
             setLoading(false)
              
            }
-
+ 
             
            
 
@@ -143,12 +144,12 @@ export const Licencias = () => {
 
                   <div className='contenidoTablaLicencias' >
 
-                      <FlatList list={vacas} renderItem={(item,index) => 
+                      <FlatList list={datos} renderItem={(item,index) => 
                               <div key={index} className='divflat' >
+                                  <p>{item.motivo}</p>
                                   <p>{item.desde}</p>
                                   <p>{item.hasta}</p>
-                                  <p>{item.normales}</p>
-                                  <p>{item.progresivas}</p>
+                                  <p>{item.dias}</p>
 
 
                               </div>
@@ -177,7 +178,7 @@ export const Licencias = () => {
 
                   <div className='totalLicencias' >
 
-                  <p  > Total Licencias: {vacas.length} </p>
+                  <p  > Total Licencias: {datos.length} </p>
 
 
                   </div>

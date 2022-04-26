@@ -118,3 +118,22 @@
     }
 
 }
+
+.botonVer{
+    border: none;
+    background-color: transparent;
+
+    font-size: 1.7rem;
+    margin-left: 1rem;
+    cursor: pointer;
+
+    // display: flex;
+    // flex-direction: row;
+
+    img{
+        margin-left: 6.5rem;
+        margin-top: -2.3rem;
+    }
+}
+
+

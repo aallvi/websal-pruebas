@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import websal from '../assets/logowebsal.png'
+import { log_out } from '../store/actions/login.actions'
 
 
 export const NavBar = () => {
@@ -13,6 +15,13 @@ export const NavBar = () => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
 
 console.log(screenWidth)
+
+   const dispatch = useDispatch()
+
+
+    const salir = () => {
+       dispatch(log_out())
+    }
 
   return (
 
@@ -220,7 +229,7 @@ console.log(screenWidth)
         </NavLink>
       </li>
 
-      <button className="salir" onClick={() => console.log('saliendo') }  >
+      <button className="salir" onClick={salir }  >
         <p>Salir</p>
       </button>
 

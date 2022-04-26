@@ -3,7 +3,7 @@ import { LOG_OUT, SIGN_IN,RENOV } from "../actions/login.actions";
 const initialState = {
     data: null,
     token: null,
-    autenticado: 'autenticado',
+    autenticado: null,
     errorMsg: null
 }
 
