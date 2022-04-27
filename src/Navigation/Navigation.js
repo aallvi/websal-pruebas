@@ -22,21 +22,16 @@ export const Navigation = () => {
 
     dispatch(renuew())
 
-}, []);
+  }, []);
 
 
 if(autenticado === 'checking') return <div className='marginTopLoading' >
                                            <Loading />
                                       </div> 
 
-   
-
   return (
     <BrowserRouter>
     
-     
-    
-      
       <Routes>
 
 

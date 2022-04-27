@@ -84,7 +84,7 @@ export const Datos = () => {
             <div className='contendorPencil' >
             <p className='texto' >Email </p>
 
-            <button className='botonPencil' onClick={ () => navigate('/cambiarEmail')} >
+            <button className='botonPencil' onClick={ () => navigate('/cambiarEmail',{state:datos.email})} >
             <img src={pencil} alt='pencil' />
 
             </button>
