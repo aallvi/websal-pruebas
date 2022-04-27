@@ -5,13 +5,22 @@ import Swal from 'sweetalert2'
 export const SIGN_IN = 'SIGN_IN'
 export const LOG_OUT = 'LOG_OUT'
 export const RENOV = 'RENOV'
+export const LOADING = 'LOADING'
+
+export const loadingAction = () => ({
+  type:LOADING,
+
+})
 
 export const log = (pe,px) => {
      return async (dispatch,getstate) => {
 
-                       
     
             try {
+                
+             
+              console.log('ola')
+
                 const response = await axios.post('https://aqueous-fjord-68634.herokuapp.com/https://www.websal.com/api/autoconsulta/login.asp',
                 {
                     pe,px
@@ -32,6 +41,11 @@ export const log = (pe,px) => {
 
                      localStorage.setItem('token', response.data.strCon)
                      localStorage.setItem('nombre', response.data.nombre)
+
+                     setTimeout(() => {
+                     dispatch(loadingAction())
+                       
+                     }, 3000);
                     
                 } else {
                   Swal.fire({
@@ -41,15 +55,18 @@ export const log = (pe,px) => {
                     
                   })
                 
+                  dispatch(loadingAction())
 
                 }
                     
         
               } catch (error) {
                 console.error(error);
+                dispatch(loadingAction())
+
               }
 
-
+               
 
 
      }
@@ -65,6 +82,8 @@ export const log_out = () => ({
 
 })
 
+
+
 export const renuew =() => {
     return async (dispatch,getstate) => {
 
@@ -73,23 +92,24 @@ export const renuew =() => {
         const strcon = localStorage.getItem('token')
 
         
-        console.log('token',strcon)
+        console.log('tokeeeeen',strcon)
+
         if(!strcon) return dispatch({
             type:LOG_OUT
         })
 
-        const response = await axios.post('https://www.websal.cl/api/autoconsulta/contrato.asp',
+        const response = await axios.post('https://aqueous-fjord-68634.herokuapp.com/https://www.websal.com/api/autoconsulta/contrato.asp',
          {
             strcon
          });
-        //   console.log('tokeeeeenen',strcon);
-         
+               
          if(response.data.cargo){
-              
+
            dispatch({
             type:SIGN_IN,
             payload:response.data,
-            token:strcon
+            token:strcon,
+
            })
          
 

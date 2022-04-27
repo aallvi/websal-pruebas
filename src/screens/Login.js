@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { Logo } from '../components/Logo'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { log } from '../store/actions/login.actions';
+import { loadingAction, log } from '../store/actions/login.actions';
 import 'animate.css';
 import { Link, useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2'
+import { Loading } from '../components/Loading';
 
 
 
@@ -16,7 +17,15 @@ export const Login = () => {
 
   const [pe, setPe] = useState("")
   const [px, setPx] = useState("")
+   
+  const loading = useSelector(state => state.login.loading)
 
+   console.log(localStorage.getItem('token')) 
+
+
+
+  console.log('loading',loading)
+  
 
   const dispatch = useDispatch()
 
@@ -32,20 +41,16 @@ const sign =() => {
       return
   }
    
+   console.log('pasaporaca')
 
-  
+   dispatch(loadingAction())
 
-  dispatch(log(pe,px))
+   dispatch(log(pe,px))
+   
 
 
+   
 }
-
-
-   console.log(pe)
-
-   console.log(px)
-    
-
 
 
   return (
@@ -53,58 +58,64 @@ const sign =() => {
 
     
     <div className='container' >
-      <div className='containerLogin animate__animated animate__fadeIn'>
 
-          <div className='contenedorLogo'>
-                <Logo/>
+        {
+          loading ? <div className='marginTopLoading' ><Loading/></div>  :
+          <>
+        <div className='containerLogin animate__animated animate__fadeIn'>
+
+                    <div className='contenedorLogo'>
+                          <Logo/>
+
+                    </div>
+
+                    <div className='iniciar' >
+                          <p>Inicia Sesión en <span>WebSal</span></p>
+                     </div> 
+                  
+
+                    
+
+                  <div className='contenedorInput' >
+
+                                <label > Código contrato </label>
+                                <input type='text' value={pe} onChange={e => setPe(e.target.value) } />
+
+                                <label> Clave </label>
+                                <input type='password'  value={px} onChange={e => setPx(e.target.value) } />
+
+
+                                <button type='button' className='ingresar' onClick={ sign} >
+                                  <p>Ingresar</p> 
+                                    </button>
+
+
+                                <button onClick={ () => navigate('/RecuperarClave') } className='recuperarClave' >
+                                  <p className='textoRecuperarClave' > Recuperar Contraseña </p> 
+                                </button>
+
+                                <button onClick={ () => navigate('/PrimeraVez') } className='recuperarClave' >
+                                  <p className='textoPrimeraVez' > Ingresar por primera vez </p> 
+                                </button>
+
+
+                  </div>
+
+
+
 
 
 
             </div>
-            <div className='iniciar' >
-           <p>Inicia Sesión en <span>WebSal</span></p>
-           </div> 
-           
-
-            
-
-          <div className='contenedorInput' >
 
           
 
-          <label > Código contrato </label>
-          <input type='text' value={pe} onChange={e => setPe(e.target.value) } />
-
-          <label> Clave </label>
-          <input type='password'  value={px} onChange={e => setPx(e.target.value) } />
+          
+          </>
+        }
 
 
-           <button type='button' className='ingresar' onClick={ sign} >
-             <p>Ingresar</p> 
-               </button>
-
-
-           <button onClick={ () => navigate('/RecuperarClave') } className='recuperarClave' >
-            <p className='textoRecuperarClave' > Recuperar Contraseña </p> 
-           </button>
-
-           <button onClick={ () => navigate('/PrimeraVez') } className='recuperarClave' >
-            <p className='textoPrimeraVez' > Ingresar por primera vez </p> 
-           </button>
-
-         
-
-
-
-          </div>
-
-        
-
-
-
-
-      </div>
-      
+     
 
 
     </div>

@@ -1,10 +1,11 @@
-import { LOG_OUT, SIGN_IN,RENOV } from "../actions/login.actions";
+import { LOG_OUT, SIGN_IN,RENOV, LOADING } from "../actions/login.actions";
 
 const initialState = {
     data: null,
     token: null,
-    autenticado: null,
-    errorMsg: null
+    autenticado: 'checking',
+    errorMsg: null,
+    loading: false
 }
 
 const LoginReducer = (state = initialState, action) => {
@@ -32,6 +33,12 @@ const LoginReducer = (state = initialState, action) => {
                 data:null,
                 token:action.payload,
                 autenticado: 'autorizado'
+
+            }
+        case LOADING:
+            return {
+                ...state,
+                loading: !state.loading
 
             }
     
