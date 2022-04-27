@@ -18,15 +18,17 @@ export const Contrato = () => {
         try {
 
             const response = await axios.post('https://aqueous-fjord-68634.herokuapp.com/https://www.websal.com/api/autoconsulta/contrato.asp',
-             {
-                strcon
-             });
+             {strcon
+                
+             }
+             
+             );
 
              if(response.data.afp){
               setDatos(response.data)
              }
 
-             console.log('resp',response.data)
+             console.log('resp',response)
                 
             } catch (error) {
               

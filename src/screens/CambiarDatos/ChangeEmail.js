@@ -50,9 +50,8 @@ export const ChangeEmail = () => {
        Swal.fire({
             title: 'Emails ingresados son diferentes',
             text: 'Intentalo otra vez',
-            confirmButtonColor:'#2ec1db',
-            
-          })
+            confirmButtonColor:'#2ec1db',            
+       })
  
  
  
