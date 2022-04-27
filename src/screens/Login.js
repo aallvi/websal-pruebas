@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Logo } from '../components/Logo'
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -47,10 +47,40 @@ const sign =() => {
 
    dispatch(log(pe,px))
    
+   recuerdame()
 
 
    
 }
+
+const [remembUser, setRemembUser] = useState(false)
+
+console.log('rememberUser',remembUser)
+
+        useEffect(() => {
+          logrecuerdame()
+        }, [])
+
+      const recuerdame =  () => {
+        if(remembUser){
+             localStorage.removeItem('remember')
+             localStorage.setItem('remember', pe)
+        }
+        if(!remembUser){
+          localStorage.removeItem('remember')
+            
+        }
+      }
+
+      const logrecuerdame =  () => {
+        const name =  localStorage.getItem('remember')
+        setPe(name)
+        if(name){
+            setRemembUser(true)
+        }
+        
+}
+
 
 
   return (
@@ -80,6 +110,13 @@ const sign =() => {
 
                                 <label > Código contrato </label>
                                 <input type='text' value={pe} onChange={e => setPe(e.target.value) } />
+                                <div className='recuerdameContainer' >
+                                  <p>Recuerdame</p>
+                                  <input className='inputCheck' type="checkbox" checked={remembUser} onClick={ () => setRemembUser(!remembUser)} />
+
+                                </div>
+                                 
+                                      
 
                                 <label> Clave </label>
                                 <input type='password'  value={px} onChange={e => setPx(e.target.value) } />

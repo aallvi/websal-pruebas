@@ -21,6 +21,8 @@ console.log(screenWidth)
 
     const salir = () => {
        dispatch(log_out())
+
+       localStorage.removeItem('token')
     }
 
   return (
