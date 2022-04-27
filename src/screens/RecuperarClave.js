@@ -51,7 +51,7 @@ export const RecuperarClave = () => {
         try {
           setDatos({validacion:4})
           const peNumber = Number(pe)
-            const response = await axios.post('https://www.websal.cl/api/autoconsulta/recctsp.asp',
+            const response = await axios.post('https://aqueous-fjord-68634.herokuapp.com/https://www.websal.com/api/autoconsulta/recctsp.asp',
             {
                 pe:peNumber
             });
@@ -106,7 +106,7 @@ export const RecuperarClave = () => {
           try {
             setDatos({validacion:4})
             const peNumber = Number(pe)
-              const response = await axios.post('https://www.websal.cl/api/autoconsulta/recctsp.asp',
+              const response = await axios.post('https://aqueous-fjord-68634.herokuapp.com/https://www.websal.com/api/autoconsulta/recctsp.asp',
               {
                   pe:peNumber,codigo
               });
@@ -176,7 +176,7 @@ export const RecuperarClave = () => {
             console.log('Datosenviados',{pe:peNumber,codigo,px})
           // Validar clave entre 2 a 20 caracteres y que sean iguales
 
-            const response = await axios.post('https://www.websal.cl/api/autoconsulta/recctsp.asp',
+            const response = await axios.post('https://aqueous-fjord-68634.herokuapp.com/https://www.websal.com/api/autoconsulta/recctsp.asp',
             {
                 pe:peNumber,codigo,px
             });
@@ -247,7 +247,7 @@ export const RecuperarClave = () => {
 
 
 
-              <button className='continuar' onClick={ () => console.log('continuar') }  >
+              <button className='continuar' onClick={ segundaEtapa }  >
                 <p> Continuar </p> 
               </button>
 
@@ -271,7 +271,7 @@ export const RecuperarClave = () => {
 
 
 
-              <button className='continuar' onClick={ () => console.log('continuar') }  >
+              <button className='continuar' onClick={ consultarDatos }  >
                 <p> Continuar </p> 
               </button>
 
@@ -298,7 +298,7 @@ export const RecuperarClave = () => {
 
 
 
-              <button className='continuar' onClick={ () => console.log('continuar') }  >
+              <button className='continuar' onClick={ ingresar }  >
                 <p> Continuar </p> 
               </button>
 

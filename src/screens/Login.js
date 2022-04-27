@@ -132,7 +132,7 @@ console.log('rememberUser',remembUser)
                                 </button>
 
                                 <button onClick={ () => navigate('/PrimeraVez') } className='recuperarClave' >
-                                  <p className='textoPrimeraVez' > Ingresar por primera vez </p> 
+                                  <p className='textoPrimeraVez' >¿Primera vez en WebSal? <span>Ingresa Aqui</span> </p> 
                                 </button>
 
 

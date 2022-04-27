@@ -72,7 +72,7 @@ export const PrimeraVez = () => {
            const peNumber = Number(pe)
            console.log('peNumber',peNumber)
  
-             const response = await axios.post('https://www.websal.cl/api/autoconsulta/primeravez.asp',
+             const response = await axios.post('https://aqueous-fjord-68634.herokuapp.com/https://www.websal.cl/api/autoconsulta/primeravez.asp',
              {
                  pe:peNumber,dia,mes,ano,empresaId
              });
@@ -142,7 +142,7 @@ export const PrimeraVez = () => {
  
            // Validar clave entre 2 a 20 caracteres y que sean iguales
  
-             const response = await axios.post('https://www.websal.cl/api/autoconsulta/primeravez.asp',
+             const response = await axios.post('https://aqueous-fjord-68634.herokuapp.com/https://www.websal.com/api/autoconsulta/primeravez.asp',
              {
                  pe,px,codigo
              });
@@ -206,7 +206,7 @@ export const PrimeraVez = () => {
 
 
 
-              <button className='continuar' onClick={ () => console.log('continuar') }  >
+              <button className='continuar' onClick={ () => ingresar() }  >
                 <p> Continuar </p> 
               </button>
 
@@ -238,7 +238,7 @@ export const PrimeraVez = () => {
 
                     
 
-                      <button className='continuar' onClick={ () => console.log('continuar') }  >
+                      <button className='continuar' onClick={ () => consultarDatos() }  >
                         <p> Continuar </p> 
                       </button>
 
