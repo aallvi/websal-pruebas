@@ -127,7 +127,7 @@ console.log('rememberUser',remembUser)
                                     </button>
 
 
-                                <button onClick={ () => navigate('/RecuperarClave') } className='recuperarClave' >
+                                <button onClick={ () => navigate('/RecuperarClave') } className='recuperarClave marginTop' >
                                   <p className='textoRecuperarClave' > Recuperar Contraseña </p> 
                                 </button>
 
