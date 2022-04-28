@@ -135,7 +135,7 @@ export const Certificados = () => {
 
 
       <div className='contenedorCertificadoListo animate__animated animate__fadeIn' >
-        <p>Certificado Listo</p> 
+        <p>Tu certificado esta listo</p> 
 
         <a href={datos} target='_blank' className='verPdf' >Ver PDF</a>
       </div>

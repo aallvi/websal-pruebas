@@ -3,6 +3,7 @@ import FlatList from 'flatlist-react';
 import axios from 'axios'
 import { useSelector } from 'react-redux';
 import Swal from 'sweetalert2'
+import { Loading } from '../components/Loading';
 
 
 export const Vacaciones = () => {
@@ -11,6 +12,11 @@ export const Vacaciones = () => {
 
 
   const [datos, setDatos] = useState({tomadas:0})
+
+  console.log(datos.resultado)
+
+  const [loading, setLoading] = useState(false);
+
 
   const [vacacionesTomadas, setvacacionesTomadas] = useState([])
 
@@ -29,6 +35,7 @@ export const Vacaciones = () => {
 
               // Alert.alert("Sin información","No hay información disponible", );
               setDatos(response.data)
+              setLoading(false)
 
                 return
             }
@@ -37,7 +44,8 @@ export const Vacaciones = () => {
               console.log(response.data)
             //  console.log('respuesta',response.data.tomadas)
             setvacacionesTomadas(response.data.tomadas)
-
+            setLoading(false)
+            
                 
             } catch (error) {
               console.log(error)
@@ -47,6 +55,7 @@ export const Vacaciones = () => {
                 confirmButtonColor:'#2ec1db',
                 
               })
+              setLoading(false)
               
                 
             }
@@ -56,41 +65,13 @@ export const Vacaciones = () => {
 
 
     useEffect(() => {
-     
+      setLoading(true)
      consultarDatos()
 
     }, [])
     
 
-   const vacas = [
-    {
-      desde:'04/01/2022',
-      hasta:'05/03/2023',
-      normales:'30',
-      progresivas:'20'
-    },{
-     desde:'04/01/2022',
-     hasta:'05/03/2023',
-     normales:'30',
-     progresivas:'20'
-   },{
-     desde:'04/01/2022',
-     hasta:'05/03/2023',
-     normales:'30',
-     progresivas:'20'
-   },{
-     desde:'04/01/2022',
-     hasta:'05/03/2023',
-     normales:'30',
-     progresivas:'20'
-   },
-   {
-     desde:'04/01/2022',
-     hasta:'05/03/2023',
-     normales:'30',
-     progresivas:'20'
-   },
-  ]
+
 
 
 
@@ -98,10 +79,26 @@ export const Vacaciones = () => {
   return (
     <div className='VacationContainer animate__animated animate__fadeIn' >
 
-       <div className='titulo' >
-       <p >Informacion sobre tus Vacaciones</p>
+      {
+        loading ? 
 
-       </div>
+        <>
+             <div className='marginTopLoading' >
+                  <Loading />
+              </div> 
+        
+        
+        </>
+
+        :
+
+
+        <>
+
+          <div className='titulo' >
+          <p >Informacion sobre tus Vacaciones</p>
+
+          </div>
 
             <div className='contenedorDatosPrincipalesVacas' >
 
@@ -150,7 +147,7 @@ export const Vacaciones = () => {
             </div>
 
            <div className='vacacionesTomadas' >
-               <p  >Vacaciones Tomadas: <span>{vacacionesTomadas.length} </span> </p>
+               <p  >Vacaciones Tomadas: <span> {datos.resultado === '0' ? '-' : vacacionesTomadas.length}</span> </p>
 
            </div>
 
@@ -190,8 +187,11 @@ export const Vacaciones = () => {
                             
                             renderWhenEmpty={() =>
                               <div className='renderEmpty' >
-
-                                <p>No haz tomado Vacaciones</p>
+                                
+                                {
+                                  datos.resultado === '0' ? <p> Información no disponible </p> :   <p>No haz tomado Vacaciones</p>
+                                }
+                                
 
                               </div>
                             }
@@ -205,6 +205,16 @@ export const Vacaciones = () => {
 
 
             </div>
+        
+        
+        
+        
+        
+        
+        </>
+      }
+
+      
 
 
       

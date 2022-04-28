@@ -3,6 +3,7 @@ import FlatList from 'flatlist-react';
 import { useSelector } from 'react-redux';
 import axios from 'axios'
 import Swal from 'sweetalert2'
+import { Loading } from '../components/Loading';
 
 
 export const Licencias = () => {
@@ -12,12 +13,14 @@ export const Licencias = () => {
 
 
       
-  const [datos, setDatos] = useState({})
+  const [datos, setDatos] = useState([])
 
-  const [loading, setLoading] = useState(true);
+  const [noDisponible, setNoDisponible] = useState(false)
+
+  const [loading, setLoading] = useState(false);
   const [isRefreshing, setIsRefreshing] = useState(false)
  
-  console.log('licencias',datos)
+  console.log('licencias',datos.resultado)
 
 
   const consultarDatos = async () => {
@@ -28,14 +31,27 @@ export const Licencias = () => {
               strcon
            });
 
+           if(response.data.resultado){
+            setNoDisponible(true)
+
+           }
+
 
            if(response.data.licencias) {
             setDatos(response.data.licencias)
             setLoading(false)
 
            }else {
-            setDatos(response.data)
-            setLoading(false)
+            // setNoDisponible(true)
+                 if(response.data.resultado){
+                 setNoDisponible(true)
+                 setLoading(false)
+
+                 }else{
+                  setDatos(response.data)
+                  setLoading(false)
+                 }
+            
              
            }
  
@@ -61,6 +77,7 @@ export const Licencias = () => {
 
   }
     useEffect(() => {
+      setLoading(true)
         
 
       consultarDatos()
@@ -70,57 +87,23 @@ export const Licencias = () => {
 
 
 
-
-
-  const vacas = [
-    {
-      desde:'Enfermedad',
-      hasta:'05/03/2023',
-      normales:'04/01/2022',
-      progresivas:'20'
-    },{
-     desde:'Permiso sin goce de sueldo ',
-     hasta:'05/03/2023',
-     normales:'30',
-     progresivas:'20'
-   },{
-     desde:'04/01/2022',
-     hasta:'05/03/2023',
-     normales:'30',
-     progresivas:'20'
-   },{
-     desde:'04/01/2022',
-     hasta:'05/03/2023',
-     normales:'30',
-     progresivas:'20'
-   },
-   {
-     desde:'04/01/2022',
-     hasta:'05/03/2023',
-     normales:'30',
-     progresivas:'20'
-   },{
-    desde:'04/01/2022',
-    hasta:'05/03/2023',
-    normales:'30',
-    progresivas:'20'
-  },{
-    desde:'04/01/2022',
-    hasta:'05/03/2023',
-    normales:'30',
-    progresivas:'20'
-  },{
-    desde:'04/01/2022',
-    hasta:'05/03/2023',
-    normales:'30',
-    progresivas:'20'
-  },
-  ]
-
-
-
   return (
     <div className='VacationContainer animate__animated animate__fadeIn' >
+
+      {
+        loading ?
+        <>
+        
+              <div className='marginTopLoading' >
+                  <Loading />
+              </div> 
+        
+        
+        </>
+        :
+
+
+        <>
 
          <div className='titulo' >
          <p className='tituloLicencias' >Informacion sobre tus Licencias</p>
@@ -163,7 +146,11 @@ export const Licencias = () => {
                             renderWhenEmpty={() =>
                               <div className='renderEmpty' >
 
-                                <p>No tienes licencias</p>
+                                {
+                                  noDisponible ? <p> Información no disponible </p> :   <p>No tienes licencias</p>
+                                }
+
+                            
 
                               </div>
                             }
@@ -178,7 +165,7 @@ export const Licencias = () => {
 
                   <div className='totalLicencias' >
 
-                  <p  > Total Licencias: {datos.length} </p>
+                  <p  > Total Licencias: {noDisponible ? '-' : datos.length}  </p>
 
 
                   </div>
@@ -186,6 +173,14 @@ export const Licencias = () => {
 
 
             </div>
+        
+        
+        
+        
+        </>
+      }
+
+        
     
     </div>
     

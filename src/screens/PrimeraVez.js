@@ -72,12 +72,12 @@ export const PrimeraVez = () => {
            const peNumber = Number(pe)
            console.log('peNumber',peNumber)
  
-             const response = await axios.post('https://aqueous-fjord-68634.herokuapp.com/https://www.websal.cl/api/autoconsulta/primeravez.asp',
+             const response = await axios.post('https://aqueous-fjord-68634.herokuapp.com/https://www.websal.com/api/autoconsulta/primeravez.asp',
              {
                  pe:peNumber,dia,mes,ano,empresaId
              });
  
-             console.log('qe',response.data.validacion)
+             console.log('qe',response.data)
  
                if(response.data.validacion.length === 0){
                   alert("Datos Incorrectos","Los datos ingresados no son correctos o ya ingreso por primera vez con su usuario", );
