@@ -7,6 +7,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import { registerLocale, setDefaultLocale } from  "react-datepicker";
 import es from 'date-fns/locale/es';
 import { Loading } from '../components/Loading';
+import Swal from 'sweetalert2'
+
 registerLocale('es', es)
 
 export const PrimeraVez = () => {
@@ -84,7 +86,12 @@ export const PrimeraVez = () => {
        const consultarDatos = async () => {
            
          if (  pe === '' || empresaId=== '' ) {
-           alert("Completa todos los campos","Intentalo otra vez", );
+          Swal.fire({
+            title: 'Completa todos los campos',
+            text: 'Intentalo otra vez',
+            confirmButtonColor:'#2ec1db',
+            
+          })
            return
          }
  
@@ -101,7 +108,13 @@ export const PrimeraVez = () => {
             //  console.log('qe',response.data)
  
                if(response.data.validacion.length === 0){
-                  alert("Datos Incorrectos","Los datos ingresados no son correctos o ya ingreso por primera vez con su usuario", );
+                  
+                  Swal.fire({
+                    title: 'Datos Incorrectos',
+                    text: 'Los datos ingresados no son correctos o ya ingreso por primera vez con su usuario',
+                    confirmButtonColor:'#2ec1db',
+                    
+                  })
                   setDatos({validacion:2})
  
                  
@@ -132,28 +145,57 @@ export const PrimeraVez = () => {
        const ingresar = async () => {
  
          if (  px === '' || codigo === '' ) {
-           alert("Completa todos los campos","Intentalo otra vez", );
+          Swal.fire({
+            title: 'Completa todos los campos',
+            text: 'Intentalo otra vez',
+            confirmButtonColor:'#2ec1db',
+            
+          })
            return
          }
  
          if(px.includes("'")){
-           alert("Intentalo otra vez","La contraseña no puede tener comillas simples ' '", );
+           
+           Swal.fire({
+            title: 'Intentalo otra vez',
+            text: 'Intentalo otra vez","La contraseña no puede tener comillas simples ',
+            confirmButtonColor:'#2ec1db',
+            
+          })
            return
           }
  
          if(px.includes(" ")){
-           alert("La Clave no puede contener espacios","Intentalo otra vez", );
+           
+           Swal.fire({
+            title: 'La Clave no puede contener espacios',
+            text: 'Intentalo otra vez',
+            confirmButtonColor:'#2ec1db',
+            
+          })
            return
               
           }
  
          if ( px !== pxAgain) {
-           alert("Claves deben ser iguales","Intentalo otra vez", );
+           
+           Swal.fire({
+            title: 'Las Claves deben ser iguales',
+            text: 'Intentalo otra vez',
+            confirmButtonColor:'#2ec1db',
+            
+          })
            return
          } 
  
          if (px.length < 4 || px.length >20 ){
-           alert("Clave invalida","Debe tener entre 4 y 20 caracteres", );
+     
+           Swal.fire({
+            title: 'Clave invalida',
+            text: 'Debe tener entre 4 y 20 caracteres',
+            confirmButtonColor:'#2ec1db',
+            
+          })
             return
          }
          
@@ -171,7 +213,13 @@ export const PrimeraVez = () => {
               // console.log('respuesta',response.data)
               
               if(response.data.validacion === 0){
-               alert("Codigo incorrecto","Intentalo otra vez", );
+             
+               Swal.fire({
+                title: 'Codigo incorrecto',
+                text: 'Intentalo otra vez',
+                confirmButtonColor:'#2ec1db',
+                
+              })
  
               } else {
  
@@ -195,7 +243,18 @@ export const PrimeraVez = () => {
  
          }
  
-        //  console.log('date',date)
+         const pressEnter = (e) => {
+          if(e.key === 'Enter'){
+            consultarDatos()
+          }
+        
+        }
+         const pressEnterSecond = (e) => {
+          if(e.key === 'Enter'){
+            ingresar()
+          }
+        
+        }
 
 
   return (
@@ -217,10 +276,10 @@ export const PrimeraVez = () => {
                     
 
               <label  > Nueva Contraseña</label>
-              <input type={mostrar} value={px} onChange={e => setClave(e.target.value) } />
+              <input onKeyPress={pressEnterSecond} type={mostrar} value={px} onChange={e => setClave(e.target.value) } />
 
               <label  > Repita Nueva Contraseña</label>
-              <input type={mostrar} value={pxAgain} onChange={e => setClaveAgain(e.target.value) } />
+              <input onKeyPress={pressEnterSecond} type={mostrar} value={pxAgain} onChange={e => setClaveAgain(e.target.value) } />
 
 
               <button className='mostrarBtn' onClick={() => ver() } >
@@ -246,17 +305,17 @@ export const PrimeraVez = () => {
                   
 
                       <label  > Código de contrato</label>
-                      <input type='text' value={pe} onChange={e => setPe(e.target.value) } />
+                      <input onKeyPress={pressEnter} type='text' value={pe} onChange={e => setPe(e.target.value) } />
 
                       <label  > Fecha de Nacimiento </label>
                       <div className="customDatePickerWidth">
-                      <DatePicker  popperClassName='popperWidth' locale="es" selected={date} onChange={(date) => setDate(date)}/>
+                      <DatePicker onKeyPress={pressEnter} popperClassName='popperWidth' locale="es" selected={date} onChange={(date) => setDate(date)}/>
 
                       </div>
                       {/* COLOCAR DATEPICKER MAS COMPLETO DE https://reactdatepicker.com/ */}
 
                       <label> RUT Empresa </label>
-                      <input type='text' value={empresaId} onChange={e => setEmpresaId(e.target.value) } />
+                      <input type='text' onKeyPress={pressEnter} value={empresaId} onChange={e => setEmpresaId(e.target.value) } />
 
 
                       

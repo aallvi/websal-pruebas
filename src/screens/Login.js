@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Logo } from '../components/Logo'
 import { useDispatch, useSelector } from 'react-redux';
-
 import { loadingAction, log } from '../store/actions/login.actions';
 import 'animate.css';
 import { Link, useNavigate } from "react-router-dom";
@@ -82,7 +81,12 @@ const [remembUser, setRemembUser] = useState(false)
         
 }
 
+const pressEnter = (e) => {
+  if(e.key === 'Enter'){
+    sign()
+  }
 
+}
 
   return (
     
@@ -113,14 +117,14 @@ const [remembUser, setRemembUser] = useState(false)
                                 <input type='text' value={pe} onChange={e => setPe(e.target.value) } />
                                 <div className='recuerdameContainer' >
                                   <p>Recuerdame</p>
-                                  <input className='inputCheck' type="checkbox" checked={remembUser} onChange={ () => setRemembUser(!remembUser)} />
+                                  <input className='inputCheck' onKeyPress={pressEnter} type="checkbox" checked={remembUser} onChange={ () => setRemembUser(!remembUser)} />
 
                                 </div>
                                  
                                       
 
                                 <label> Clave </label>
-                                <input type='password'  value={px} onChange={e => setPx(e.target.value) } />
+                                <input type='password' onKeyPress={pressEnter} value={px} onChange={e => setPx(e.target.value) } />
 
 
                                 <button type='button' className='ingresar' onClick={ sign} >

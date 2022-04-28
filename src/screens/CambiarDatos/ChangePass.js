@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 export const ChangePass = () => {
      
@@ -25,28 +26,54 @@ export const ChangePass = () => {
        //  console.log('aer',nuevaClave.replace(" ",""))
  
         if(claveActual.length === 0 || nuevaClave.length === 0 || repetirClave.length === 0){
-           alert("Completa todos los campos","Intentalo otra vez", );
+           
+           Swal.fire({
+            title: 'Completa todos los campos',
+            text: 'Intentalo otra vez',
+            confirmButtonColor:'#2ec1db',
+            
+          })
            return
         }
  
         if(nuevaClave.includes("'")){
-         alert("Intentalo otra vez","La contraseña no puede tener comillas simples ' '", );
+         Swal.fire({
+          title: 'Intentalo otra vez',
+          text: 'La contraseña no puede tener comillas simples ',
+          confirmButtonColor:'#2ec1db',
+          
+        })
          return
         }
  
         if(nuevaClave.includes(" ")){
-         alert("Intentalo otra vez","La contraseña no puede tener espacios", );
+        
+         Swal.fire({
+          title: 'Intentalo otra vez',
+          text: 'La contraseña no puede tener espacios',
+          confirmButtonColor:'#2ec1db',
+        })
          return
         }
    
  
         if (nuevaClave.length < 4 || nuevaClave.length >20 ){
-          alert("Clave invalida","Debe tener entre 4 y 20 caracteres", );
+         
+          Swal.fire({
+            title: 'Clave invalida',
+            text: 'Debe tener entre 4 y 20 caracteres',
+            confirmButtonColor:'#2ec1db',
+          })
           return
         }
  
          if( nuevaClave !== repetirClave ) {
-           alert("Claves deben ser iguales","Intentalo otra vez", );
+          
+           Swal.fire({
+            title: 'Claves deben ser iguales',
+            text: 'Intentalo otra vez',
+            confirmButtonColor:'#2ec1db',
+          })
            return 
          } 
  
@@ -64,7 +91,12 @@ export const ChangePass = () => {
                if(response.data.resultado === '1'){
                   setEstadoCambio(1)
                } else {
-                 alert("Contraseña actual incorrecta","Intentalo otra vez", );
+                 
+                 Swal.fire({
+                  title: 'Contraseña actual incorrecta',
+                  text: 'Intentalo otra vez',
+                  confirmButtonColor:'#2ec1db',
+                })
  
                }
  
@@ -103,6 +135,13 @@ export const ChangePass = () => {
             
     }
 
+    const pressEnter = (e) => {
+      if(e.key === 'Enter'){
+        changePassword()
+      }
+    
+    }
+
 
   return (
     <>
@@ -121,17 +160,17 @@ export const ChangePass = () => {
 
                     <div className='contenedorCambio'>
                     <label> Contraseña actual </label>
-                    <input onChange={e => setData({...data,claveActual:e.target.value}) } type={mostrar} />
+                    <input onKeyPress={pressEnter} onChange={e => setData({...data,claveActual:e.target.value}) } type={mostrar} />
 
                     </div>
                     <div className='contenedorCambio'>
                     <label> Nueva contraseña  </label>
-                    <input onChange={e => setData({...data,nuevaClave:e.target.value}) } type={mostrar} />
+                    <input onKeyPress={pressEnter} onChange={e => setData({...data,nuevaClave:e.target.value}) } type={mostrar} />
 
                     </div>
                     <div className='contenedorCambio'>
                     <label> Repita la nueva contraseña </label>
-                    <input onChange={e => setData({...data,repetirClave:e.target.value}) } type={mostrar} security={true} />
+                    <input onKeyPress={pressEnter} onChange={e => setData({...data,repetirClave:e.target.value}) } type={mostrar} security={true} />
 
                     </div>
 

@@ -1,9 +1,11 @@
 import axios from 'axios';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ReactCodeInput from 'react-code-input';
 import { useDispatch } from 'react-redux';
 import { Loading } from '../components/Loading';
 import { renuew } from '../store/actions/login.actions';
+import Swal from 'sweetalert2'
+
 // import { reactCodeInput } from 'CodeInputField.scss'
 
 
@@ -44,7 +46,13 @@ export const RecuperarClave = () => {
       const consultarDatos = async () => {
           
         if (  pe === 0  ) {
-          alert("Completa todos los campos","Intentalo otra vez", );
+         
+          Swal.fire({
+            title: 'Completa todos los campos',
+            text: 'Intentalo otra vez',
+            confirmButtonColor:'#2ec1db',
+            
+          })
           return
         }
 
@@ -68,13 +76,25 @@ export const RecuperarClave = () => {
                 
               } else if (response.data.validacion === 9) {
 
-                alert("Ya se envio un codigo de recuperacion","Debes esperar 15 minutos para solicitar otro", );
+                
+                Swal.fire({
+                  title: 'Ya se envio un codigo de recuperacion',
+                  text: 'Debes esperar 15 minutos para solicitar otro',
+                  confirmButtonColor:'#2ec1db',
+                  
+                })
                  setDatos({validacion:2})
                       
               }
               
               else {
-                alert("Datos Incorrectos","Intentalo otra vez", );
+                
+                Swal.fire({
+                  title: 'Datos Incorrectos',
+                  text: 'Intentalo otra vez',
+                  confirmButtonColor:'#2ec1db',
+                  
+                })
                  setDatos({validacion:2})
 
               }
@@ -100,7 +120,13 @@ export const RecuperarClave = () => {
         const segundaEtapa = async () => {
           
           if (  codigo === ''  ) {
-            alert("Completa todos los campos","Intentalo otra vez", );
+           
+            Swal.fire({
+              title: 'Completa todos los campos',
+              text: 'Intentalo otra vez',
+              confirmButtonColor:'#2ec1db',
+              
+            })
             return
           }
   
@@ -123,7 +149,13 @@ export const RecuperarClave = () => {
   
                   
                 } else {
-                  alert("Codigo Incorrecto","Intentalo otra vez", );
+                 
+                  Swal.fire({
+                    title: 'Codigo Incorrecto',
+                    text: 'Intentalo otra vez',
+                    confirmButtonColor:'#2ec1db',
+                    
+                  })
                    setDatos({validacion:'1'})
   
                 }
@@ -150,23 +182,47 @@ export const RecuperarClave = () => {
       const ingresar = async () => {
 
         if(px.includes("'")){
-          alert("Intentalo otra vez","La contraseña no puede tener comillas simples ' '", );
+          
+          Swal.fire({
+            title: 'Intentalo otra vez',
+            text: 'La contraseña no puede tener comillas simples',
+            confirmButtonColor:'#2ec1db',
+            
+          })
           return
          }
 
         if(px.includes(" ")){
-          alert("La Clave no puede contener espacios","Intentalo otra vez", );
+          
+          Swal.fire({
+            title: 'La Clave no puede contener espacios',
+            text: 'Intentalo otra vez',
+            confirmButtonColor:'#2ec1db',
+            
+          })
           return
              
          }
 
         if ( px !== pxAgain) {
-          alert("Claves deben ser iguales","Intentalo otra vez", );
+          
+          Swal.fire({
+            title: 'Claves deben ser iguales',
+            text: 'Intentalo otra vez',
+            confirmButtonColor:'#2ec1db',
+            
+          })
           return
         } 
 
         if (px.length < 4 || px.length >20 ){
-          alert("Clave invalida","Debe tener entre 4 y 20 caracteres", );
+        
+          Swal.fire({
+            title: 'Clave invalida',
+            text: 'Debe tener entre 4 y 20 caracteres',
+            confirmButtonColor:'#2ec1db',
+            
+          })
            return
         }
         
@@ -219,7 +275,34 @@ export const RecuperarClave = () => {
     setCodigo(codigo)
    }
 
+   const pressEnterFirst = (e) => {
+    if(e.key === 'Enter'){
+      consultarDatos()
+      
+    }
+  
+  }
+   const pressEnterTercera = (e) => {
+    if(e.key === 'Enter'){
+      ingresar()
+      
+    }
+  
+  }
+    
 
+  useEffect(() => {
+     if(codigo.length === 4){
+       setTimeout(() => {
+        segundaEtapa()
+        setCodigo('')
+       }, 500);
+      
+     }
+
+
+  }, [codigo])
+  
 
 
   return (
@@ -241,7 +324,7 @@ export const RecuperarClave = () => {
               <label  > Codigo recibido </label>
               {/* <input className='inputCodigoRecibido' type='text' value={codigo} onChange={e => setCodigo(e.target.value) } /> */}
               <div className='codeInput' >
-              <ReactCodeInput id="codigo" type='text' fields={4} value={codigo}  onChange={codePin}  />
+              <ReactCodeInput id="codigo" type='text' fields={4} value={codigo}   onChange={codePin}  />
 
               </div>
 
@@ -249,7 +332,7 @@ export const RecuperarClave = () => {
 
 
 
-              <button className='continuar' onClick={ segundaEtapa }  >
+              <button className='continuar'  onClick={ segundaEtapa }  >
                 <p> Continuar </p> 
               </button>
 
@@ -266,14 +349,14 @@ export const RecuperarClave = () => {
                     
 
               <label  > Código de contrato </label>
-              <input type='text' value={pe} onChange={e => setPe(e.target.value) } />
+              <input type='text' onKeyPress={pressEnterFirst} value={pe} onChange={e => setPe(e.target.value) } />
 
 
 
 
 
 
-              <button className='continuar' onClick={ consultarDatos }  >
+              <button className='continuar'  onClick={ consultarDatos }  >
                 <p> Continuar </p> 
               </button>
 
@@ -290,10 +373,10 @@ export const RecuperarClave = () => {
                     
 
               <label  > Nueva Contraseña</label>
-              <input type='text' value={px} onChange={e => setClave(e.target.value) } />
+              <input type='text' onKeyPress={pressEnterTercera} value={px} onChange={e => setClave(e.target.value) } />
 
               <label className='textoRepitaClave' > Repita Nueva Contraseña</label>
-              <input type='text' value={pxAgain} onChange={e => setClaveAgain(e.target.value) } />
+              <input type='text'  onKeyPress={pressEnterTercera} value={pxAgain} onChange={e => setClaveAgain(e.target.value) } />
 
 
 

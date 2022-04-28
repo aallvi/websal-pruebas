@@ -83,6 +83,13 @@ export const ChangeEmail = () => {
      navigate('/datos')
    }
 
+   const pressEnter = (e) => {
+      if(e.key === 'Enter'){
+            changeEmail()
+      }
+    
+    }
+
 
 
 
@@ -129,14 +136,14 @@ export const ChangeEmail = () => {
 
                         <div className='contenedorCambio'>
                               <label> Nuevo email  </label>
-                              <input type='text'  onChange={e => setNuevoEmail(e.target.value)} />
+                              <input type='text' onKeyPress={pressEnter} onChange={e => setNuevoEmail(e.target.value)} />
 
                         </div>
 
 
                         <div className='contenedorCambio'>
                               <label> Repita el nuevo email </label>
-                              <input type='text'  onChange={e => setRepeatEmail(e.target.value)}   />
+                              <input type='text' onKeyPress={pressEnter}  onChange={e => setRepeatEmail(e.target.value)}   />
 
                         </div>
 
