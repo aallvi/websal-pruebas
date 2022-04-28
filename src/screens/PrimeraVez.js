@@ -19,6 +19,27 @@ export const PrimeraVez = () => {
     
     
    const [datos, setDatos] = useState({validacion:2});
+
+   const [mostrar, setmostrar] = useState('password')
+
+   const ver = () => {
+
+    if(mostrar === 'text'){
+
+        setmostrar('password')
+
+        return
+    }
+
+    if(mostrar === 'password'){
+
+        setmostrar('text')
+        
+        return
+    }
+
+}
+
  
    //  Variables primera etapa
  
@@ -196,13 +217,15 @@ export const PrimeraVez = () => {
                     
 
               <label  > Nueva Contraseña</label>
-              <input type='text' value={px} onChange={e => setClave(e.target.value) } />
+              <input type={mostrar} value={px} onChange={e => setClave(e.target.value) } />
 
               <label  > Repita Nueva Contraseña</label>
-              <input type='text' value={pxAgain} onChange={e => setClaveAgain(e.target.value) } />
+              <input type={mostrar} value={pxAgain} onChange={e => setClaveAgain(e.target.value) } />
 
 
-
+              <button className='mostrarBtn' onClick={() => ver() } >
+                    { mostrar === 'password' ? 'Mostrar' : 'Ocultar' }  
+                    </button>
 
 
 
