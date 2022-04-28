@@ -9,7 +9,7 @@ export const Certificados = () => {
 
   const strcon = useSelector(state => state.login.token)
 
-  console.log(strcon)
+  // console.log(strcon)
   const [antiguedad, setAntiguedad] = useState(false)
   const [tipoContrato, setTipoContrato] = useState(false);
   const [cargo, setCargo] = useState(false);
@@ -17,7 +17,7 @@ export const Certificados = () => {
 
   const [datos, setDatos] = useState(['link'])
   
-  console.log('pdf',datos)
+  // console.log('pdf',datos)
 
   const anti = antiguedad === true ? '1' : ''
   const tipo = tipoContrato === true ? '2' : ''
@@ -26,7 +26,7 @@ export const Certificados = () => {
 
   const certificados = anti+tipo+car+rent
 
-  console.log('hola',certificados);
+  // console.log('hola',certificados);
 
   const consultarDatos = async () => {
     
@@ -64,7 +64,7 @@ export const Certificados = () => {
       
     })
 
-       console.log('generando...')
+      //  console.log('generando...')
 
       
       consultarDatos()

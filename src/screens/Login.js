@@ -20,11 +20,12 @@ export const Login = () => {
    
   const loading = useSelector(state => state.login.loading)
 
-   console.log(localStorage.getItem('token')) 
+  //  console.log(localStorage.getItem('token')) 
 
 
 
-  console.log('loading',loading)
+
+  // console.log('loading',loading)
   
 
   const dispatch = useDispatch()
@@ -41,7 +42,7 @@ const sign =() => {
       return
   }
    
-   console.log('pasaporaca')
+  //  console.log('pasaporaca')
 
    dispatch(loadingAction())
 
@@ -55,7 +56,7 @@ const sign =() => {
 
 const [remembUser, setRemembUser] = useState(false)
 
-console.log('rememberUser',remembUser)
+// console.log('rememberUser',remembUser)
 
         useEffect(() => {
           logrecuerdame()
@@ -112,7 +113,7 @@ console.log('rememberUser',remembUser)
                                 <input type='text' value={pe} onChange={e => setPe(e.target.value) } />
                                 <div className='recuerdameContainer' >
                                   <p>Recuerdame</p>
-                                  <input className='inputCheck' type="checkbox" checked={remembUser} onClick={ () => setRemembUser(!remembUser)} />
+                                  <input className='inputCheck' type="checkbox" checked={remembUser} onChange={ () => setRemembUser(!remembUser)} />
 
                                 </div>
                                  

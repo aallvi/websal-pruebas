@@ -30,7 +30,7 @@ export const Datos = () => {
               
              }
 
-               console.log('resp',response.data)
+              //  console.log('resp',response.data)
                 
             } catch (error) {
               

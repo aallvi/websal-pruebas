@@ -33,11 +33,11 @@ export const RecuperarClave = () => {
   const [codigo, setCodigo] = useState('');
   const [px, setClave] = useState('');
   const [pxAgain, setClaveAgain] = useState('');
-  console.log('qepasa',codigo)
+  // console.log('qepasa',codigo)
 
   const [strcon, setStrcon] = useState('')
 
-      console.log('datosescritos',{pe,px,codigo})
+      // console.log('datosescritos',{pe,px,codigo})
 
     
     //   Primera Etapa Consulta
@@ -56,7 +56,8 @@ export const RecuperarClave = () => {
                 pe:peNumber
             });
 
-            console.log('Primera validacion',response.data.validacion)
+            // console.log('Primera validacion',response.data.validacion)
+
 
               if(response.data.validacion ==='1'){
 
@@ -111,7 +112,8 @@ export const RecuperarClave = () => {
                   pe:peNumber,codigo
               });
   
-              console.log('segundavalidacion',response.data.validacion)
+              // console.log('segundavalidacion',response.data.validacion)
+
   
                 if(response.data.validacion ==='1'){
   
@@ -173,7 +175,7 @@ export const RecuperarClave = () => {
           setDatos({validacion:4})
 
           const peNumber = Number(pe)
-            console.log('Datosenviados',{pe:peNumber,codigo,px})
+            // console.log('Datosenviados',{pe:peNumber,codigo,px})
           // Validar clave entre 2 a 20 caracteres y que sean iguales
 
             const response = await axios.post('https://aqueous-fjord-68634.herokuapp.com/https://www.websal.com/api/autoconsulta/recctsp.asp',
@@ -181,7 +183,7 @@ export const RecuperarClave = () => {
                 pe:peNumber,codigo,px
             });
 
-             console.log('tercera validacion',response.data)
+            //  console.log('tercera validacion',response.data)
              
 
               setStrcon(response.data)
@@ -209,7 +211,7 @@ export const RecuperarClave = () => {
 
 
 
-   console.log('pe',pe)
+  //  console.log('pe',pe)
 
   
 
@@ -222,7 +224,7 @@ export const RecuperarClave = () => {
 
   return (
    
-    <div className='containerLogin animate__animated animate__fadeIn'>
+    <div className='containerLogin animate__animated animate__fadeIn '>
       
       <div className='tituloRecuperar' >
       <p>Recupera tu Contraseña

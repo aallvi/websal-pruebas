@@ -20,7 +20,7 @@ export const Licencias = () => {
   const [loading, setLoading] = useState(false);
   const [isRefreshing, setIsRefreshing] = useState(false)
  
-  console.log('licencias',datos.resultado)
+  // console.log('licencias',datos.resultado)
 
 
   const consultarDatos = async () => {

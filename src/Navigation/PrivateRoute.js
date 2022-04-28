@@ -12,7 +12,7 @@ export const PrivateRoute = ({children}) => {
 
   
 
-  console.log('autenticado?',autenticado);
+  // console.log('autenticado?',autenticado);
 
 
 

@@ -39,10 +39,10 @@ export const PrimeraVez = () => {
  
    const ano = date!= null ? Number(date.toString().split(' ')[3]) : 'a'
  
-   console.log('mes',mes)
+  //  console.log('mes',mes)
 
-   console.log('dia',dia)
-   console.log('ano',ano)
+  //  console.log('dia',dia)
+  //  console.log('ano',ano)
  
    //  Variables segunda Etapa
  
@@ -70,14 +70,14 @@ export const PrimeraVez = () => {
          try {
            setDatos({validacion:3})
            const peNumber = Number(pe)
-           console.log('peNumber',peNumber)
+          //  console.log('peNumber',peNumber)
  
              const response = await axios.post('https://aqueous-fjord-68634.herokuapp.com/https://www.websal.com/api/autoconsulta/primeravez.asp',
              {
                  pe:peNumber,dia,mes,ano,empresaId
              });
  
-             console.log('qe',response.data)
+            //  console.log('qe',response.data)
  
                if(response.data.validacion.length === 0){
                   alert("Datos Incorrectos","Los datos ingresados no son correctos o ya ingreso por primera vez con su usuario", );
@@ -104,7 +104,7 @@ export const PrimeraVez = () => {
  
          }
   
-          console.log('largoclave',px.length)
+          // console.log('largoclave',px.length)
  
          // Segunda Etapa Consulta
  
@@ -147,7 +147,7 @@ export const PrimeraVez = () => {
                  pe,px,codigo
              });
  
-              console.log('respuesta',response.data)
+              // console.log('respuesta',response.data)
               
               if(response.data.validacion === 0){
                alert("Codigo incorrecto","Intentalo otra vez", );
@@ -174,7 +174,7 @@ export const PrimeraVez = () => {
  
          }
  
-         console.log('date',date)
+        //  console.log('date',date)
 
 
   return (
@@ -226,8 +226,10 @@ export const PrimeraVez = () => {
                       <input type='text' value={pe} onChange={e => setPe(e.target.value) } />
 
                       <label  > Fecha de Nacimiento </label>
+                      <div className="customDatePickerWidth">
+                      <DatePicker  popperClassName='popperWidth' locale="es" selected={date} onChange={(date) => setDate(date)}/>
 
-                      <DatePicker  locale="es" selected={date} onChange={(date) => setDate(date)}/>
+                      </div>
                       {/* COLOCAR DATEPICKER MAS COMPLETO DE https://reactdatepicker.com/ */}
 
                       <label> RUT Empresa </label>

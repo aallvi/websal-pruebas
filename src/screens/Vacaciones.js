@@ -13,7 +13,7 @@ export const Vacaciones = () => {
 
   const [datos, setDatos] = useState({tomadas:0})
 
-  console.log(datos.resultado)
+  // console.log(datos.resultado)
 
   const [loading, setLoading] = useState(false);
 
@@ -41,7 +41,7 @@ export const Vacaciones = () => {
             }
          
               setDatos(response.data)
-              console.log(response.data)
+              // console.log(response.data)
             //  console.log('respuesta',response.data.tomadas)
             setvacacionesTomadas(response.data.tomadas)
             setLoading(false)

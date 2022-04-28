@@ -19,14 +19,14 @@ export const log = (pe,px) => {
             try {
                 
              
-              console.log('ola')
+              // console.log('ola')
 
                 const response = await axios.post('https://aqueous-fjord-68634.herokuapp.com/https://www.websal.com/api/autoconsulta/login.asp',
                 {
                     pe,px
                 });
 
-                console.log('prueba',response)
+                // console.log('prueba',response)
                 
                 if(response.data.nombre){
                     
@@ -92,7 +92,7 @@ export const renuew =() => {
         const strcon = localStorage.getItem('token')
 
         
-        console.log('tokeeeeen',strcon)
+        // console.log('tokeeeeen',strcon)
 
         if(!strcon) return dispatch({
             type:LOG_OUT

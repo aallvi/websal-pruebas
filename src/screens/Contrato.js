@@ -28,7 +28,7 @@ export const Contrato = () => {
               setDatos(response.data)
              }
 
-             console.log('resp',response)
+            //  console.log('resp',response)
                 
             } catch (error) {
               

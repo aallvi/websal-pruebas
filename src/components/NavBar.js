@@ -14,7 +14,7 @@ export const NavBar = () => {
 
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
 
-console.log(screenWidth)
+// console.log(screenWidth)
 
    const dispatch = useDispatch()
 

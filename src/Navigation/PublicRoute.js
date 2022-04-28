@@ -9,7 +9,7 @@ export const PublicRoute = ({children}) => {
   const autenticado = useSelector(state => state.login.autenticado)
   
 
-  console.log('autenticado?',autenticado);
+  // console.log('autenticado?',autenticado);
 
 
 
