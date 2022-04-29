@@ -15,6 +15,8 @@ export const Licencias = () => {
       
   const [datos, setDatos] = useState([])
 
+  console.log(datos)
+
   const [noDisponible, setNoDisponible] = useState(false)
 
   const [loading, setLoading] = useState(false);

@@ -114,6 +114,9 @@ export const RecuperarClave = () => {
         }
  
         //  console.log('largoclave',px.length)
+        const [aux, setAux] = useState('')
+
+        console.log('aux',aux)
           
       // Segunda etapa enviamos pe y el codigo qe le llego al mail
        
@@ -129,6 +132,8 @@ export const RecuperarClave = () => {
             })
             return
           }
+
+          setAux(codigo)
   
           try {
             setDatos({validacion:4})
@@ -231,12 +236,12 @@ export const RecuperarClave = () => {
           setDatos({validacion:4})
 
           const peNumber = Number(pe)
-            // console.log('Datosenviados',{pe:peNumber,codigo,px})
+            console.log('Datosenviados',{pe:peNumber,codigo:aux,px})
           // Validar clave entre 2 a 20 caracteres y que sean iguales
 
             const response = await axios.post('https://aqueous-fjord-68634.herokuapp.com/https://www.websal.com/api/autoconsulta/recctsp.asp',
             {
-                pe:peNumber,codigo,px
+                pe:peNumber,codigo:aux,px
             });
 
             //  console.log('tercera validacion',response.data)

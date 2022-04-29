@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link, Route, Routes,BrowserRouter } from 'react-router-dom'
+import { Link, Route, Routes,HashRouter, Navigate } from 'react-router-dom'
 import { Loading } from '../components/Loading'
 import { Login } from '../screens/Login'
 import { PrimeraVez } from '../screens/PrimeraVez'
@@ -30,10 +30,10 @@ if(autenticado === 'checking') return <div className='marginTopLoading' >
                                       </div> 
 
   return (
-    <BrowserRouter>
+    <HashRouter>
     
       <Routes>
-
+      
 
     
           
@@ -57,6 +57,8 @@ if(autenticado === 'checking') return <div className='marginTopLoading' >
 
           } />
 
+
+
               
 
          
@@ -70,7 +72,7 @@ if(autenticado === 'checking') return <div className='marginTopLoading' >
            }
            
             />
-      
+     
 
 
 
@@ -80,6 +82,6 @@ if(autenticado === 'checking') return <div className='marginTopLoading' >
     
     
     
-    </BrowserRouter>
+    </HashRouter>
   )
 }

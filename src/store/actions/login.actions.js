@@ -50,7 +50,7 @@ export const log = (pe,px) => {
                 } else {
                   Swal.fire({
                     title: 'Datos incorrectos',
-                    text: 'intentalo otra vez',
+                    text: 'Intentalo otra vez',
                     confirmButtonColor:'#2ec1db',
                     
                   })

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import { Homescreen } from '../screens/Homescreen'
 import { Liquidaciones } from '../screens/Liquidaciones'
 import { Licencias } from '../screens/Licencias'
@@ -41,7 +41,10 @@ export const NavigationLog = () => {
         <Route path='/cambiarClave' element={<ChangePass />} />
         <Route path='/cambiarEmail' element={<ChangeEmail />} />
 
-
+        <Route
+        path="*"
+        element={<Navigate to="/" replace />}
+        />
 
 
 
