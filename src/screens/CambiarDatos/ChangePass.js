@@ -3,6 +3,9 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
+import eye from './eye-outline.svg'
+import eyeOff from './eye-off-outline.svg'
+
 
 export const ChangePass = () => {
      
@@ -13,7 +16,7 @@ export const ChangePass = () => {
 
     const [data, setData] = useState({claveActual:'',nuevaClave:'',repetirClave:''})
 
-    console.log(data)
+    // console.log(data)
 
     const strcon = useSelector(state => state.login.token)
 
@@ -177,6 +180,7 @@ export const ChangePass = () => {
 
                     <button className='mostrarBtn' onClick={() => ver() } >
                     { mostrar === 'password' ? 'Mostrar' : 'Ocultar' }  
+                    <img  className='ver' src={ mostrar === 'password' ? eye : eyeOff } alt='ver' />
                     </button>
 
 

@@ -75,7 +75,7 @@ export const Certificados = () => {
   return (
    <>
 
-        <div className='titulo animate__animated animate__fadeIn' >
+        <div className='tituloCerti animate__animated animate__fadeIn' >
          <p>Genera tu certificado con los elementos que necesitas</p>
          </div> 
 

@@ -8,6 +8,9 @@ import { registerLocale, setDefaultLocale } from  "react-datepicker";
 import es from 'date-fns/locale/es';
 import { Loading } from '../components/Loading';
 import Swal from 'sweetalert2'
+import eye from '../assets/eye-outline.svg'
+import eyeOff from '../assets/eye-off-outline.svg'
+
 
 registerLocale('es', es)
 
@@ -284,7 +287,9 @@ export const PrimeraVez = () => {
 
               <button className='mostrarBtn' onClick={() => ver() } >
                     { mostrar === 'password' ? 'Mostrar' : 'Ocultar' }  
-                    </button>
+                    <img  className='ver' src={ mostrar === 'password' ? eye : eyeOff } alt='ver' />
+
+              </button>
 
 
 

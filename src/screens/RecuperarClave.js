@@ -5,8 +5,9 @@ import { useDispatch } from 'react-redux';
 import { Loading } from '../components/Loading';
 import { renuew } from '../store/actions/login.actions';
 import Swal from 'sweetalert2'
+import eye from '../assets/eye-outline.svg'
+import eyeOff from '../assets/eye-off-outline.svg'
 
-// import { reactCodeInput } from 'CodeInputField.scss'
 
 
 export const RecuperarClave = () => {
@@ -25,7 +26,25 @@ export const RecuperarClave = () => {
   const [pe, setPe] = useState('');
   
  
+  const [mostrar, setmostrar] = useState('password')
 
+  const ver = () => {
+
+   if(mostrar === 'text'){
+
+       setmostrar('password')
+
+       return
+   }
+
+   if(mostrar === 'password'){
+
+       setmostrar('text')
+       
+       return
+   }
+
+}
 
 
   // console.log('mes',mes)
@@ -378,13 +397,17 @@ export const RecuperarClave = () => {
                     
 
               <label  > Nueva Contraseña</label>
-              <input type='text' onKeyPress={pressEnterTercera} value={px} onChange={e => setClave(e.target.value) } />
+              <input type={mostrar}  onKeyPress={pressEnterTercera} value={px} onChange={e => setClave(e.target.value) } />
 
               <label className='textoRepitaClave' > Repita Nueva Contraseña</label>
-              <input type='text'  onKeyPress={pressEnterTercera} value={pxAgain} onChange={e => setClaveAgain(e.target.value) } />
+              <input type={mostrar}  onKeyPress={pressEnterTercera} value={pxAgain} onChange={e => setClaveAgain(e.target.value) } />
 
 
+              <button className='mostrarBtn' onClick={() => ver() } >
+                    { mostrar === 'password' ? 'Mostrar' : 'Ocultar' }  
+                    <img  className='ver' src={ mostrar === 'password' ? eye : eyeOff } alt='ver' />
 
+              </button>
 
 
 

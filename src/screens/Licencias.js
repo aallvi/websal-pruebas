@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import { Loading } from '../components/Loading';
+import document from '../assets/document-text-outline.svg'
 
 
 export const Licencias = () => {
@@ -109,6 +110,8 @@ export const Licencias = () => {
 
          <div className='titulo' >
          <p className='tituloLicencias' >Informacion sobre tus Licencias</p>
+         <img  className='ver' src={document} alt='ver' />
+
          </div> 
 
 

@@ -4,6 +4,7 @@ import axios from 'axios'
 import { useSelector } from 'react-redux';
 import Swal from 'sweetalert2'
 import { Loading } from '../components/Loading';
+import airplane from '../assets/airplane-outline.svg'
 
 
 export const Vacaciones = () => {
@@ -97,6 +98,7 @@ export const Vacaciones = () => {
 
           <div className='titulo' >
           <p >Informacion sobre tus Vacaciones</p>
+          <img  className='ver' src={airplane} alt='ver' />
 
           </div>
 
