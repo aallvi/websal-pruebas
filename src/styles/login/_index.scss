@@ -69,7 +69,7 @@
 
 
 .ingresar {
-    margin-top: 2rem;
+    margin-top: 4rem;
     margin-bottom: 1rem;
     background-color: v.$primario; /* Green */
   border: none;
@@ -252,3 +252,36 @@ label {
     border-left-color: #ccc;
     right: 1em;
   }
+
+
+  .mostrarBtnLogin{
+    width: 12rem;
+    font-size: 1.8rem;
+
+    margin: 0 auto;
+    margin-top: 3rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+    // position: absolute;
+    margin-top: -3rem;
+    margin-left: 19.5rem;
+    
+   img {
+       width: 3rem;
+    //    margin-left: 1rem;
+   }
+      
+}
+
+
+// .contenedorClaveOjo{
+//     display: flex;
+//     flex-direction: row;
+//     background-color: red;
+// }

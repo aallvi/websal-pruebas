@@ -6,6 +6,8 @@ import 'animate.css';
 import { Link, useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2'
 import { Loading } from '../components/Loading';
+import eye from '../assets/eye-outline.svg'
+import eyeOff from '../assets/eye-off-outline.svg'
 
 
 
@@ -88,6 +90,29 @@ const pressEnter = (e) => {
 
 }
 
+const [mostrar, setmostrar] = useState('password')
+
+
+const ver = () => {
+
+  if(mostrar === 'text'){
+
+      setmostrar('password')
+
+      return
+  }
+
+  if(mostrar === 'password'){
+
+      setmostrar('text')
+      
+      return
+  }
+
+}
+
+
+
   return (
     
 
@@ -124,12 +149,22 @@ const pressEnter = (e) => {
                                       
 
                                 <label> Clave </label>
-                                <input type='password' onKeyPress={pressEnter} value={px} onChange={e => setPx(e.target.value) } />
+                                <div className='contenedorClaveOjo'>
 
+                                    <input type={mostrar} onKeyPress={pressEnter} value={px} onChange={e => setPx(e.target.value) } />
+                                    
+                                    <button className='mostrarBtnLogin' onClick={() => ver() } >
+                                          <img className='ver' src={ mostrar === 'password' ? eye : eyeOff } alt='ver' />
+                                    </button>
+
+
+                                </div>
+                                
+                                            
 
                                 <button type='button' className='ingresar' onClick={ sign} >
                                   <p>Ingresar</p> 
-                                    </button>
+                                </button>
 
 
                                 <button onClick={ () => navigate('/RecuperarClave') } className='recuperarClave marginTop' >
