@@ -35,12 +35,15 @@ export const Homescreen = () => {
          <img src={googleplay} />
 
       </a>
+      
+      {/* Para cuando ya este en la playstore */}
 
-      <a href='https://play.google.com/store/apps/details?id=com.appwebsal' target='_blank' >
+      
+      {/* <a href='https://play.google.com/store/apps/details?id=com.appwebsal' target='_blank' >
       <img className='appstore' src={appstore}  />
 
 
-      </a>
+      </a> */}
 
       
      </div>

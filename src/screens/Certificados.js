@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
 import { Loading } from '../components/Loading';
 import Swal from 'sweetalert2'
+import check from '../assets/checkmark-circle-outline.svg'
+
 
 
 export const Certificados = () => {
@@ -128,14 +130,24 @@ export const Certificados = () => {
     {
 
       datos.length===0 ? 
-
+      <div className='marginTopLoadingCerti'>
       <Loading />
+
+      </div>
 
       : datos.length > 1?  
 
 
       <div className='contenedorCertificadoListo animate__animated animate__fadeIn' >
+        <div className='certificadoListo' >
+
         <p>Tu certificado esta listo</p> 
+        <img  className='ver' src={check} alt='ver' />
+
+
+        </div>
+      
+
 
         <a href={datos} target='_blank' className='verPdf' >Ver PDF</a>
       </div>
