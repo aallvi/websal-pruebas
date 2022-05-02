@@ -173,27 +173,43 @@ nav {
 .salir{
 
 
-    width: fit-content;
+    width: 7rem;
+    height: 3rem;
     margin: 0 auto;
     
     // margin-right: 9rem;
     background-color: transparent;
-    border: none;
-    // background-color: red;
+    border: 1px solid red;
+    border-radius: 1rem;
+    
     cursor: pointer;
     margin-top: 1.7rem;
+    transition: 0.4s;
 
     p{
         font-size: 1.9rem;
         color: red;
         margin: 0;
         padding: 0;
+        // transition: 0.4s;
+        // &:hover{
+          
+        //     color: white;
+        // }
         
     }
 
     @include m.tablet {
     margin-left: 9rem;
     margin-top: 0;
+    }
+
+    &:hover{
+        background-color: red;
+        p{
+            color: white;
+
+        }
     }
 
 

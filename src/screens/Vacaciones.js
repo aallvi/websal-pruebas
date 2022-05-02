@@ -191,7 +191,7 @@ export const Vacaciones = () => {
                               <div className='renderEmpty' >
                                 
                                 {
-                                  datos.resultado === '0' ? <p> Información no disponible </p> :   <p>No haz tomado Vacaciones</p>
+                                  datos.resultado === '0' ? <p> Información no disponible </p> :   <p>No has tomado vacaciones</p>
                                 }
                                 
 
