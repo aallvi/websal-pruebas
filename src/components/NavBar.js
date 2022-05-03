@@ -130,7 +130,7 @@ export const NavBar = () => {
             isActive ? 'activeClassName' : 'BotonNav'
           }
         >
-          Datos
+          Mis Datos
         </NavLink>
       </li>
 
@@ -227,7 +227,7 @@ export const NavBar = () => {
             isActive ? 'activeClassName' : 'BotonNav'
           }
         >
-          Datos
+         Mis Datos
         </NavLink>
       </li>
 

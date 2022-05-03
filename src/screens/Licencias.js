@@ -111,7 +111,7 @@ export const Licencias = () => {
          <div className='headerLicencias ' >
            <div className='contenedorTituloLicencias'>
 
-           <p className='tituloLicencias' >Informacion sobre tus Licencias</p>
+           <p className='tituloLicencias' >Información sobre tus Licencias</p>
            <img  className='ver' src={document} alt='ver' />
 
 

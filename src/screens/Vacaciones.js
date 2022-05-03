@@ -97,7 +97,7 @@ export const Vacaciones = () => {
         <>
 
           <div className='titulo' >
-          <p >Informacion sobre tus Vacaciones</p>
+          <p >Información sobre tus Vacaciones</p>
           <img  className='ver' src={airplane} alt='ver' />
 
           </div>
