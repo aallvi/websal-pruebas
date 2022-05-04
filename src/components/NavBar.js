@@ -134,7 +134,7 @@ export const NavBar = () => {
         </NavLink>
       </li>
 
-      <button className="salir" onClick={() => console.log('saliendo') }  >
+      <button className="salir" onClick={ salir }  >
         <p>Salir</p>
       </button>
 
